@@ -13,17 +13,20 @@ The goal is to guide you (the curator) to discover art in a fun, engaging and ac
 https://dbdiagram.io/d/64a3166702bd1c4a5e6e71dc
 ![Screenshot 2023-07-05 at 1 26 27 PM](https://github.com/rachelsteiner91/mermaidmatisse/assets/127536637/3d30f981-fe6d-4418-88e5-7bcb146bfe0c)
 
-a User...
+##User
 - belongs to a Collection
 - has many Artworks through ArtCollections
 - has a Collection through ArtCollections
 - has many Artworks
-an Artwork...
+  
+##Artwork
 - belongs to an Artist
 - has many Collections
-an Artist...
+
+##Artist
 - has many Artworks
-a Collection...
+
+##Collection
 - belongs to a User
 - has many Artworks through an ArtCollection
 
