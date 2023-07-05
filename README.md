@@ -11,7 +11,8 @@ The goal is to guide you (the curator) to discover art in a fun, engaging and ac
 
 ## Models
 https://dbdiagram.io/d/64a3166702bd1c4a5e6e71dc
-![Screenshot 2023-07-05 at 1 26 27 PM](https://github.com/rachelsteiner91/mermaidmatisse/assets/127536637/3d30f981-fe6d-4418-88e5-7bcb146bfe0c)
+![Screenshot 2023-07-05 at 3 15 42 PM](https://github.com/rachelsteiner91/mermaidmatisse/assets/127536637/a144b654-a0d7-40e5-ad4a-67ac2e2d55ff)
+
 
 ##User
 - belongs to a Collection
