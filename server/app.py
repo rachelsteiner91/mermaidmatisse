@@ -8,7 +8,7 @@ from flask_restful import Resource
 
 # Local imports
 from config import app, db, api
-# from models import Curator
+from models import User, Artist, ArtCollection, Collection, Artwork
 
 # Views go here!
 @app.route("/")
