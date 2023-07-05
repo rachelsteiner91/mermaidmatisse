@@ -36,6 +36,7 @@ class Collection(db.Model, SerializerMixin):
     __tablename__ = "collections"
 
     id = db.Column(db.Integer, primary_key=True)
+    artwork_id = db.Column(db.Integer, db.ForeignKey('artworks.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     created_at = db.Column(db.DateTime)
 ##RELATIONSHIPS    
@@ -51,8 +52,8 @@ class Artist(db.Model, SerializerMixin):
     medium = db.Column(db.String)
     artworks = db.relationship('Artwork', back_populates='artists')
 
-class ArtCollection(db.Model, SerializerMixin):
-    __tablename__="art_collections"
+# class ArtCollection(db.Model, SerializerMixin):
+#     __tablename__="art_collections"
 
-    artwork_id = db.Column(db.Integer, db.ForeignKey('artworks.id'), primary_key=True)
-    collection_id = db.Column(db.Integer, db.ForeignKey('collections.id'), primary_key=True)
+#     artwork_id = db.Column(db.Integer, db.ForeignKey('artworks.id'), primary_key=True)
+#     collection_id = db.Column(db.Integer, db.ForeignKey('collections.id'), primary_key=True)
