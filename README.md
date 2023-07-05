@@ -29,7 +29,7 @@ https://dbdiagram.io/d/64a3166702bd1c4a5e6e71dc
 
 ##Collection
 - belongs to a User
-- has many Artworks through an ArtCollection
+- has many Artworks 
 
 
 ## API Routes
