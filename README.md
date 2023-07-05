@@ -6,7 +6,8 @@ The goal is to guide you (the curator) to discover art in a fun, engaging and ac
 
 ## User Stories 
 - Users can view all artworks
-- Users can add artworks to their art collection
+- Users can search and view by color, medium, subject matter(minimalist, abstract, contemporary, human, landscape), staff picks
+- Users can add artworks to their art collection 
 - Users can delete or thumbs down an artwork they don't like
 
 ## Models
