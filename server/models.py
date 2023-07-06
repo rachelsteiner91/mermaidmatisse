@@ -40,6 +40,8 @@ class Artwork(db.Model, SerializerMixin):
 ##RELATIONSHIPS    
     artists = db.relationship('Artist', back_populates ='artworks')
     style = db.relationship('Style', backref='artworks') #back referencing itself because it already has a foreign key
+##Serializers
+    serialize_rules = ("-style_id", "-artists.artworks", "-style.artworks",)
 ##VALIDATIONS
 # #~~~~~~~~~~~~~~~# 
 class Collection(db.Model, SerializerMixin):
