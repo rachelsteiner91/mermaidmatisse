@@ -35,9 +35,11 @@ class Artwork(db.Model, SerializerMixin):
     title = db.Column(db.String)
     medium = db.Column(db.String)
     image = db.Column(db.String)
+    style_id = db.Column(db.String, db.ForeignKey('styles.id'))
     created_at = db.Column(db.DateTime)
 ##RELATIONSHIPS    
     artists = db.relationship('Artist', back_populates ='artworks')
+    style = db.relationship('Style', backref='artworks') #back referencing itself because it already has a foreign key
 ##VALIDATIONS
 # #~~~~~~~~~~~~~~~# 
 class Collection(db.Model, SerializerMixin):
@@ -58,7 +60,15 @@ class Artist(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     medium = db.Column(db.String)
+##RELATIONSHIPS 
     artworks = db.relationship('Artwork', back_populates='artists')
+
+#~~~~~~~~~~~#
+class Style(db.Model, SerializerMixin):
+    __tablename__ = "styles"
+
+    id = db.Column(db.Integer, primary_key=True)
+    style_type = db.Column(db.String, nullable=False)
 
 
 
