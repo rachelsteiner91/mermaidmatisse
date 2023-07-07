@@ -1,0 +1,30 @@
+/* h1 {
+    font: Montserrat
+} */
+
+.app {
+color: #000;
+text-align: center;
+font-size: 16px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+
+} 
+/* display: flex;
+width: 147px;
+flex-direction: column; */
+
+.navbar {
+    background: #EEE9E9;
+    width: 739px;
+    height: 30px;
+}
+
+.artcard {
+    width: 143px;
+    height: 119px;
+    border: 1px solid #000;
+    background: rgba(31, 63, 11, 0.64);
+}
