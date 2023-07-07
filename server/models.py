@@ -25,7 +25,7 @@ class User(db.Model, SerializerMixin):
     collections = db.relationship('Collection', back_populates='artworks')
     # art_collection = db.relationship('ArtCollection', back_populates='user.id')
 ##VALIDATIONS
-
+    serialize_rules = ('-collections.artworks',)
 # #~~~~~~~~~~~~~~~# 
 class Artwork(db.Model, SerializerMixin):
     __tablename__ = "artworks"

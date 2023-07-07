@@ -105,6 +105,26 @@ api.add_resource(OneArtist, "/artists/<int:id>")
 
 
 #~~~~~~~Collections~~~~~~~~~#
+class NewCollection(Resource):
+    def get(self):
+        collections = Collection.query.all()
+        collections_dict = [c.to_dict(only = ("id","artwork_id", "user_id")) for c in collections]
+        return make_response(collections_dict, 200)
+    def post(self):
+        data=request.get_json()
+       
+        try:
+            new_collection = Collection(
+                artwork_id = data.get('artwork_id'),
+                user_id = data.get('user_id')
+            )
+            db.session.add(new_collection)
+            db.session.commit()
+        except:
+            return make_response({"ERROR"}, 422)
+        
+        return make_response(new_collection.to_dict(), 201)
+api.add_resource(NewCollection, '/collections')
 class UserCollection(Resource):
     def get(self, id):
         one_collection = Collection.query.filter_by(id=id).first()
@@ -164,7 +184,7 @@ api.add_resource(CurrentUser, '/users/<string:username>')
 class Users(Resource):
    def get(self):
       users = User.query.all()
-      users_dict = [u.to_dict(only=('name', 'username', 'role')) for u in users]
+      users_dict = [u.to_dict(only=('id', 'name', 'username', 'role')) for u in users]
       res = make_response(
          users_dict,
          200
