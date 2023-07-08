@@ -1,12 +1,15 @@
-// import React from 'react'
+import React from 'react'
 
 
-// function HomePage(){
+function HomePage(){
    
-//     return(
-//         <div></div>
-//     )
-// }
+    return(
+        <div>
+            <h1>Home Page</h1>
+            <h3>Please render something</h3>
+        </div>
+    )
+}
 
 
-// export default HomePage
+export default HomePage
