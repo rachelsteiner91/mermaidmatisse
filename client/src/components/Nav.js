@@ -14,7 +14,7 @@ function Nav() {
           <Link to={"/"}></Link>
         </h1>
         <NavBar />
-        <div className="menu">
+        <div className="menu" >
           <NavLink className="button" to="/artworks">
             View All
           </NavLink>

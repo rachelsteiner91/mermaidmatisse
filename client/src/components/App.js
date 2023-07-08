@@ -26,7 +26,7 @@ function App() {
       <Search />
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage artworks={artworks}/>} />
         <Route path="/artworks" element={<ArtContainer artworks={artworks} />}/>
       </Routes>
     </Router>

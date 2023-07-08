@@ -27,13 +27,19 @@ line-height: normal;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    
 
 }
 
 .menu a:hover {
-    background-color:darkseagreen
+    background-color:darkseagreen;
+    
 }
 
+.carousel-inner {
+    background-color: #F9F4F4;
+    
+}
 .navbar {
     background: #EEE9E9;
     width: 739px;
