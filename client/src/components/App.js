@@ -13,7 +13,7 @@ function App() {
   },[]);
   
   function getArtworks(){
-      fetch ('http://localhost:4000/artworks')
+      fetch ('http://localhost:5555/artworks')
           .then(response => response.json())
           .then(data => setArtworks(data))
   
