@@ -40,7 +40,8 @@ if __name__ == '__main__':
         print("Seeding artists...")
         artists = [
             Artist(name="Jessie Makinson", medium="painting"),
-            Artist(name="Qualeasha Wood", medium="textile")
+            Artist(name="Qualeasha Wood", medium="textile"),
+            Artist(name="Miranda Forrester", medium="painting")
         ]
         db.session.add_all(artists)
         db.session.commit()
@@ -56,7 +57,8 @@ if __name__ == '__main__':
         print("Seeding artworks...")
         artworks = [
             Artwork(title="we shall be monsters", artist_id=1, medium="painting", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1126256462751088640/IMG_5E8598DF9AAC-1.jpeg"),
-            Artwork(title="Alter Egos/Projected Selves", artist_id=2, medium="textile", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1126909304025399386/1640985483-image-5-qualeasha-woods.webp")
+            Artwork(title="Alter Egos/Projected Selves", artist_id=2, medium="textile", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1126909304025399386/1640985483-image-5-qualeasha-woods.webp"),
+            Artwork(title="You can lay your hands on me", artist_id=3, medium="painting", style_id=2, image="https://cdn.discordapp.com/attachments/1113536081091108996/1127257306090967100/1650073849-you-can-lay-your-hands-on-me-miranda-forrester.webp")
         ]
         db.session.add_all(artworks)
         db.session.commit()

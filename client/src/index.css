@@ -5,21 +5,40 @@
 .app {
 color: #000;
 text-align: center;
-font-size: 16px;
-font-family: Montserrat;
+font-size: 14px;
+font-family: 'Montserrat';
 font-style: normal;
 font-weight: 800;
 line-height: normal;
 
 } 
-/* display: flex;
-width: 147px;
-flex-direction: column; */
+
+
+.menu {
+    background: #EEE9E9;
+    width: 739px;
+    height: 30px;
+    color: #000;
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+    font-size: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.menu a:hover {
+    background-color:darkseagreen
+}
 
 .navbar {
     background: #EEE9E9;
     width: 739px;
     height: 30px;
+    width: 100%;
 }
 
 .artcard {
@@ -28,3 +47,10 @@ flex-direction: column; */
     border: 1px solid #000;
     background: rgba(31, 63, 11, 0.64);
 }
+
+
+/* search bar {
+    display: flex;
+    width: 147px;
+    flex-direction: column;
+} */
