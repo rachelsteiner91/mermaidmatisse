@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import {  Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from "./Nav";
-// import HomePage from "./HomePage";
+import HomePage from "./HomePage";
 import ArtContainer from './ArtContainer';
 import Search from './Search'
 
 function App() {
   const [artworks, setArtworks] = useState([])
-
+  console.log(artworks)
   useEffect(() => {
       getArtworks();
   },[]);
   
   function getArtworks(){
-      fetch ('http://localhost:4000/')
+      fetch ('http://localhost:4000/artworks')
           .then(response => response.json())
           .then(data => setArtworks(data))
   
@@ -24,10 +24,12 @@ function App() {
       Mermaid Matisse
       <Nav />
       <Search />
-      {/* <HomePage /> */}
-      
-      <Route path="/artworks" element={<ArtContainer artworks={artworks} />}/>
-      
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/artworks" element={<ArtContainer artworks={artworks} />}/>
+      </Routes>
+    </Router>
     </div>
   )
 
