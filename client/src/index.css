@@ -1,18 +1,22 @@
 /* h1 {
     font: Montserrat
 } */
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .app {
 color: #000;
 text-align: center;
 font-size: 14px;
-font-family: 'Montserrat';
+font-family: 'Montserrat', sans-serif;
 font-style: normal;
 font-weight: 800;
 line-height: normal;
 
 } 
-
+/* .menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  } */
 
 .menu {
     background: #EEE9E9;
@@ -22,11 +26,13 @@ line-height: normal;
     text-align: center;
     padding: 12px;
     width: 100%;
-    font-size: 12px;
-    font-family: 'Montserrat';
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
+    display: flex;
+    justify-content: space-between;
     
 
 }
@@ -40,12 +46,12 @@ line-height: normal;
     background-color: #F9F4F4;
     
 }
-.navbar {
+/* .navbar {
     background: #EEE9E9;
     width: 739px;
     height: 30px;
     width: 100%;
-}
+} */
 
 .artcard {
     width: 143px;
@@ -54,6 +60,17 @@ line-height: normal;
     background: rgba(31, 63, 11, 0.64);
 }
 
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .grid-image {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
 
 /* search bar {
     display: flex;

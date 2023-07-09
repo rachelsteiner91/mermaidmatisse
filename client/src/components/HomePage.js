@@ -5,7 +5,7 @@ function HomePage({artworks}){
    
     return(
         <div>
-            <h1>home</h1>
+            <h1>Discover Art</h1>
             <h3>Staff Picks</h3>
 
       {/* Carousel */}
