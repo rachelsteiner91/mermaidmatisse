@@ -1,23 +1,26 @@
 import { Link } from "react-router-dom";
-
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function HomePage({artworks}){
    
     return(
         <div>
           <Link to="/artworks">
-            <h1>Discover Art</h1>
+            <h3>Discover Art</h3>
             </Link> 
             <h3>Staff Picks</h3>
 
       {/* Carousel */}
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
+          <Carousel>
           {artworks.map((artwork, index) => (
-            <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-              <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '400px' }} />
-            </div>
-          ))}
+             <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
+             <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '400px' }} />
+           </div>
+         ))}
+          </Carousel>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
