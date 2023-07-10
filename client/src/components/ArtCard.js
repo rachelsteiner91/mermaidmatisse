@@ -23,7 +23,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function ArtCard({ artwork }) {
-  const { title, image, medium, artist_id, id, style_id } = artwork;
+  const {id, title, image, artists, medium, style } = artwork;
   const [isAdded, setIsAdded] = useState(false);
   
 
@@ -41,7 +41,7 @@ function ArtCard({ artwork }) {
       <figure className="image">
         <img
           src={image}
-          alt={artist_id}
+          alt={artists.name}
           style={{ maxWidth: "400px", maxHeight: "400px" }}
         />
       </figure>
@@ -50,7 +50,7 @@ function ArtCard({ artwork }) {
           <h2>{title}</h2>
         </Link>
         <p>
-          {medium}, {style_id}
+        {artists.name}, {medium}, {style.style_type}
         </p>
         {!isAdded ? (
           <button onClick={handleAddToCollection}>Add to Art Collection</button>

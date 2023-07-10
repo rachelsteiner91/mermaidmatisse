@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 function ArtDetail() {
   const [artwork, setArtwork] = useState({
     roles: [],
+    artists: {},
+    style: {}
   });
   const [error, setError] = useState(null);
 
@@ -24,21 +26,21 @@ function ArtDetail() {
 
   
 
-  const { id, title, image, artist_id, medium, style_id } = artwork;
+  const { id, title, image, artists, medium, style } = artwork;
 
   if (error) return <h2>{error}</h2>;
 
   return (
     <div className="art-detail" id={id}>
       <h1>{title}</h1>
-      <p>{artist_id}</p>
+      <p>{artists.name}</p>
 
       <div className="project-card">
         <figure className="image">
         <img src={image} alt={title} style={{ maxWidth: "400px", maxHeight: "400px" }} />
           <section>
-            <p>Style: {style_id}</p>
-            <p>Artist: {artist_id}</p>
+            <p>Style: {style.style_type}</p>
+            <p>Artist: {artists.name}</p>
             <p>Medium: {medium}</p>
           </section>
         </figure>
@@ -67,3 +69,4 @@ function ArtDetail() {
 }
 
 export default ArtDetail;
+
