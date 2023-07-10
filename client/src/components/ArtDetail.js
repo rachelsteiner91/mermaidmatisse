@@ -35,7 +35,7 @@ function ArtDetail() {
 
       <div className="project-card">
         <figure className="image">
-          <img src={image} alt={title} />
+        <img src={image} alt={title} style={{ maxWidth: "400px", maxHeight: "400px" }} />
           <section>
             <p>Style: {style_id}</p>
             <p>Artist: {artist_id}</p>

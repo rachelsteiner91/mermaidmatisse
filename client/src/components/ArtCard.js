@@ -6,7 +6,7 @@ function ArtCard({ artwork }) {
   return (
     <li className="card" id={id}>
     <figure className="image">
-        <img src={image} alt={artist_id} />
+        <img src={image} alt={artist_id} style={{ maxWidth: "400px", maxHeight: "400px" }}/>
     </figure>
     <section className="details">
         <Link to={`/artworks/${id}`}>

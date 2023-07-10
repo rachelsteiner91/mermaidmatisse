@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
-import NavBar from './NavBar';
+// import NavBar from './NavBar';
 
 function Nav() {
   return (
@@ -13,7 +13,7 @@ function Nav() {
         <h1>
           <Link to={"/"}></Link>
         </h1>
-        <NavBar />
+        
         <div className="menu" >
           <NavLink className="button" to="/artworks">
             View All
