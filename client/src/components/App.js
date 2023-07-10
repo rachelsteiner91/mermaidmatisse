@@ -7,10 +7,13 @@ import Search from './Search'
 import ByStyle from './ByStyle'
 import ArtDetail from './ArtDetail'
 import StyleDetail from './StyleDetail'
+import Artist from './Artist'
+import ArtistDetail from './ArtistDetail'
 
 function App() {
   const [artworks, setArtworks] = useState([])
   const [styles, setStyles] = useState([])
+  const [artists, setArtists] = useState([])
   console.log(artworks)
   useEffect(() => {
       getArtworks();
@@ -32,6 +35,16 @@ function App() {
             .then(data => setStyles(data))
     
         }
+        useEffect(() => {
+          getArtists();
+      },[]);
+      
+      function getArtists(){
+          fetch ('http://localhost:5555/artists')
+              .then(response => response.json())
+              .then(data => setArtists(data))
+      
+          }
   // Code goes here!
   return (
     <div className = "app">
@@ -45,6 +58,8 @@ function App() {
         <Route path="/artworks/:id" element={<ArtDetail />} />
         <Route path="/styles" element={<ByStyle styles={styles}/>} />
         <Route path="/styles/:id" element={<StyleDetail />} />
+        <Route path="/artists" element={<Artist artists={artists} />} />
+        <Route path="/artists/:id" element={<ArtistDetail />} />
       </Routes>
     </Router>
     </div>
@@ -53,3 +68,10 @@ function App() {
 }
 
 export default App;
+
+// artist routes:
+// <Route path="/artists/:id" element={<ArtistDetail />} />
+// <Route path="/artists" element={<Artists artists={artists} />} />
+// <Route path="/styles/:id" element={<StyleDetail />} />
+
+//add images to seed data and models for styles

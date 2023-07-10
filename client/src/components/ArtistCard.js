@@ -1,11 +1,22 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// function ArtistCard({artist}) {
+function ArtistCard({ artist }) {
+    const { name, medium, id } = artist;
+
+  return (
+    <li className="card" id={id}>
+    <figure className="artist">
+       
+    </figure>
+    <section className="details">
+        <Link to={`/artists/${id}`}>
+            <h2>{name}</h2>
+        </Link>
+        <p>{medium}</p>
+    </section>
+</li>
+  )
+}
 
 
-// return (
-//     <div></div>
-// )
-// }
-
-// export default ArtistCard;
+export default ArtistCard
