@@ -23,17 +23,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function ArtCard({ artwork }) {
-  const { title, image, medium, style_id, artist_id, id } = artwork;
+  const { title, image, medium, artist_id, id, style_id } = artwork;
   const [isAdded, setIsAdded] = useState(false);
-  // const history = useHistory();
+  
 
   const handleAddToCollection = () => {
-    // Add your logic here to handle adding the artwork to the collection
+    
 
     setIsAdded(true);
 
-    // Navigate to "/collections" route
-    // history.push("/collections");
+    
+  
   };
 
   return (

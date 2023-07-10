@@ -26,7 +26,7 @@ def howdy():
 class Artworks(Resource):
    def get(self):
       artworks = Artwork.query.all()
-      artworks_dict = [a.to_dict(only=('id', 'title', 'artist_id', 'style_id', 'image')) for a in artworks]
+      artworks_dict = [a.to_dict(only=('id', 'title', 'medium',  'artists.name', 'style.style_type', 'image')) for a in artworks]
       res = make_response(
          artworks_dict,
          200
@@ -41,7 +41,7 @@ class OneArtwork(Resource):
             return {"404": "Artwork Not Found"}, 404
         
         res = make_response(
-            artwork.to_dict(only=('id', 'title', 'medium', 'image', 'artist_id')),
+            artwork.to_dict(only=('id', 'title', 'medium', 'image', 'artists.name', 'style.style_type')),
             200
         )
         return res
