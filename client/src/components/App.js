@@ -9,11 +9,13 @@ import ArtDetail from './ArtDetail'
 import StyleDetail from './StyleDetail'
 import Artist from './Artist'
 import ArtistDetail from './ArtistDetail'
+import Collection from './Collection'
 
 function App() {
   const [artworks, setArtworks] = useState([])
   const [styles, setStyles] = useState([])
   const [artists, setArtists] = useState([])
+ 
   console.log(artworks)
   useEffect(() => {
       getArtworks();
@@ -60,6 +62,7 @@ function App() {
         <Route path="/styles/:id" element={<StyleDetail />} />
         <Route path="/artists" element={<Artist artists={artists} />} />
         <Route path="/artists/:id" element={<ArtistDetail />} />
+        <Route path="/collections" element={<Collection />} />
       </Routes>
     </Router>
     </div>
