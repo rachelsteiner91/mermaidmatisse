@@ -1,5 +1,5 @@
 /* h1 {
-    font: Montserrat
+    font-weight: bold; 
 } */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .app {
@@ -36,6 +36,7 @@ line-height: normal;
     
 
 }
+
 
 .menu a:hover {
     background-color:darkseagreen;
