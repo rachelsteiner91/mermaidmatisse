@@ -88,7 +88,7 @@ line-height: normal;
 
 
 /* search bar stlyes */
-.search-container {
+/* .search-container {
     position: relative;
     display: inline-block;
     background-image: url("https://cdn.discordapp.com/attachments/1113536081091108996/1128133155266777198/IMG_9663.jpg");
@@ -124,4 +124,4 @@ line-height: normal;
   
   .search-container button:hover {
     opacity: 0.8;
-  }
+  } */
