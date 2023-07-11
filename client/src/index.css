@@ -21,7 +21,12 @@ line-height: normal;
     justify-content: space-between;
     margin-top: 20px;
   } */
-
+  a:link{
+    color:black;
+  }
+  a:visited{
+    color:black;
+  }
 .menu {
     background: #EEE9E9;
     width: 739px;
