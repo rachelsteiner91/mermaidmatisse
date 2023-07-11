@@ -10,6 +10,7 @@ import StyleDetail from './StyleDetail'
 import Artist from './Artist'
 import ArtistDetail from './ArtistDetail'
 import Collection from './Collection'
+import Signup from './Signup'
 
 function App() {
   const [artworks, setArtworks] = useState([])
@@ -64,6 +65,7 @@ function App() {
         <Route path="/artists" element={<Artist artists={artists} />} />
         <Route path="/artists/:id" element={<ArtistDetail />} />
         <Route path="/collections" element={<Collection />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
     </div>

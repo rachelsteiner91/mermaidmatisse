@@ -30,7 +30,7 @@ function Nav() {
           <NavLink className="button" to="/collections">
             Collection
           </NavLink>
-          <NavLink className="button" to="/discovery">
+          <NavLink className="button" to="/signup">
             Artwork Discovery
           </NavLink>
           <NavLink className="button" to="/staffpicks">
