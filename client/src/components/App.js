@@ -51,9 +51,10 @@ function App() {
   return (
     <div className = "app">
       Mermaid Matisse
+      <Router>
       <Nav />
       <Search />
-    <Router>
+    
       <Routes>
         <Route path="/" element={<HomePage artworks={artworks}/>} />
         <Route path="/artworks" element={<ArtContainer artworks={artworks} />}/>

@@ -11,7 +11,7 @@ function HomePage({artworks}){
             </Link> 
             <h3>Staff Picks</h3>
 
-      {/* Carousel */}
+      
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <Carousel>

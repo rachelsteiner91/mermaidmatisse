@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
+import {  Link, NavLink } from "react-router-dom";
 // import NavBar from './NavBar';
 
 function Nav() {
   return (
-    <Router>
+    
       <header>
         <h1>
           Mermaid Matisse
@@ -15,6 +15,9 @@ function Nav() {
         </h1>
         
         <div className="menu" >
+          <NavLink className="button" to="/">
+            Home
+          </NavLink>
           <NavLink className="button" to="/artworks">
             View All
           </NavLink>
@@ -38,7 +41,7 @@ function Nav() {
           </NavLink>
         </div>
       </header>
-    </Router>
+    
   );
 }
 
