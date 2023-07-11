@@ -9,7 +9,7 @@ function HomePage({artworks}){
           <Link to="/artworks">
             <h3>Discover Art</h3>
             </Link> 
-            <h3>Staff Picks</h3>
+            <h3>New Arrivals</h3>
 
       
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -46,3 +46,21 @@ function HomePage({artworks}){
 export default HomePage
 
 
+
+
+// <Carousel
+//         renderArrowPrev={(onClickHandler, hasPrev, label) =>
+//           hasPrev && (
+//             <button type="button" onClick={onClickHandler} title={label}>
+//               Previous
+//             </button>
+//           )
+//         }
+//         renderArrowNext={(onClickHandler, hasNext, label) =>
+//           hasNext && (
+//             <button type="button" onClick={onClickHandler} title={label}>
+//               Next
+//             </button>
+//           )
+//         }
+//       ></Carousel>

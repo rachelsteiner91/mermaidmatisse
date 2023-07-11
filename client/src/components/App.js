@@ -10,6 +10,7 @@ import Artist from './Artist'
 import ArtistDetail from './ArtistDetail'
 import Collection from './Collection'
 import Signup from './Signup'
+// import CollectionDetail from './CollectionDetail'
 
 
 function App() {
@@ -49,6 +50,16 @@ function App() {
               .then(data => setArtists(data))
       
           }
+        //   useEffect(() => {
+        //     getCollections();
+        // },[]);
+        
+        // function getCollections(){
+        //     fetch ('http://localhost:5555/collections')
+        //         .then(response => response.json())
+        //         .then(data => setCollection(data))
+        
+        //     }
           const addToCollection = (artwork) => {
             artwork.isAdded = true;
             setCollection([...collection, artwork]);
@@ -68,6 +79,7 @@ function App() {
         <Route path="/artists" element={<Artist artists={artists} />} />
         <Route path="/artists/:id" element={<ArtistDetail />} />
         <Route path="/collections" element={<Collection collection={collection} />} />
+        {/* <Route path="/collections/:id" element={<CollectionDetail />} /> */}
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>

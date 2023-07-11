@@ -45,23 +45,7 @@ function ArtDetail() {
           </section>
         </figure>
         <section className="details">
-          {/* <h3 style={{ margin: "16px auto" }}>Cast: </h3>
-          <ul className="crew">
-            {artwork.roles.map((crew) => (
-              <li key={crew.actor.id}>
-                <img
-                  width={"100px"}
-                  src={crew.actor.image}
-                  alt={crew.actor.name}
-                />
-                <div className="artist">
-                  <Link to={`/artists/${crew.actor.id}`}>
-                    <p style={{ fontStyle: "italic" }}>{crew.actor.name}</p>
-                  </Link>
-                </div>
-              </li>
-            ))}
-          </ul> */}
+          
         </section>
       </div>
     </div>
