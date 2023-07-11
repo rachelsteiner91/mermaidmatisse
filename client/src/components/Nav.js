@@ -6,7 +6,7 @@ function Nav() {
   return (
     
       <header>
-        <h1>
+        <h1 className="extra-bold">
           Mermaid Matisse
           <span className="logo" role="img"></span>
         </h1>

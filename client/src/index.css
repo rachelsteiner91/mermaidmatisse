@@ -12,6 +12,10 @@ font-weight: 800;
 line-height: normal;
 
 } 
+/* .extra-bold {
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+  } */
 /* .menu {
     display: flex;
     justify-content: space-between;
@@ -81,3 +85,43 @@ line-height: normal;
     width: 147px;
     flex-direction: column;
 } */
+
+
+/* search bar stlyes */
+.search-container {
+    position: relative;
+    display: inline-block;
+    background-image: url("https://cdn.discordapp.com/attachments/1113536081091108996/1128133155266777198/IMG_9663.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: transparent;
+    color: #fff; 
+  }
+  
+  .search-container input[type="text"]::placeholder {
+    color: #fff; 
+  }
+  
+  .search-container button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .search-container button:hover {
+    opacity: 0.8;
+  }
