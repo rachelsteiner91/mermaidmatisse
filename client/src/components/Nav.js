@@ -1,5 +1,6 @@
 import React from "react";
 import {  Link, NavLink } from "react-router-dom";
+import Search from './Search'
 // import NavBar from './NavBar';
 
 function Nav() {
@@ -13,7 +14,7 @@ function Nav() {
         <h1>
           <Link to={"/"}></Link>
         </h1>
-        
+        <Search />
         <div className="menu" >
           <NavLink className="button" to="/">
             Home

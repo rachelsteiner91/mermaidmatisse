@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from "./Nav";
 import HomePage from "./HomePage";
 import ArtContainer from './ArtContainer';
-import Search from './Search'
 import ByStyle from './ByStyle'
 import ArtDetail from './ArtDetail'
 import StyleDetail from './StyleDetail'
@@ -12,10 +11,12 @@ import ArtistDetail from './ArtistDetail'
 import Collection from './Collection'
 import Signup from './Signup'
 
+
 function App() {
   const [artworks, setArtworks] = useState([])
   const [styles, setStyles] = useState([])
   const [artists, setArtists] = useState([])
+  const [collection, setCollection] = useState([]);
  
   console.log(artworks)
   useEffect(() => {
@@ -48,23 +49,25 @@ function App() {
               .then(data => setArtists(data))
       
           }
+          const addToCollection = (artwork) => {
+            artwork.isAdded = true;
+            setCollection([...collection, artwork]);
+          };
   // Code goes here!
   return (
     <div className = "app">
       Mermaid Matisse
       <Router>
       <Nav />
-      <Search />
-    
       <Routes>
         <Route path="/" element={<HomePage artworks={artworks}/>} />
-        <Route path="/artworks" element={<ArtContainer artworks={artworks} />}/>
+        <Route path="/artworks" element={<ArtContainer artworks={artworks} addToCollection={addToCollection}/>}/>
         <Route path="/artworks/:id" element={<ArtDetail />} />
         <Route path="/styles" element={<ByStyle styles={styles}/>} />
         <Route path="/styles/:id" element={<StyleDetail />} />
         <Route path="/artists" element={<Artist artists={artists} />} />
         <Route path="/artists/:id" element={<ArtistDetail />} />
-        <Route path="/collections" element={<Collection />} />
+        <Route path="/collections" element={<Collection collection={collection} />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
