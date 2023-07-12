@@ -79,7 +79,7 @@ api.add_resource(OneStyle, "/styles/<int:id>")
 class Artists(Resource):
    def get(self):
       artists = Artist.query.all()
-      artists_dict = [a.to_dict(only=('id', 'name', 'medium')) for a in artists]
+      artists_dict = [a.to_dict(only=('id', 'name', 'medium', 'artworks.title', 'artworks.image')) for a in artists]
       res = make_response(
          artists_dict,
          200
@@ -94,7 +94,7 @@ class OneArtist(Resource):
             return {"404": "Artist Not Found"}, 404
         
         res = make_response(
-            artist.to_dict(only=('id', 'name', 'medium')),
+            artist.to_dict(only=('id', 'name', 'medium', 'artworks.title', 'artworks.image')),
             200
         )
         return res
@@ -173,14 +173,22 @@ api.add_resource(Signup, '/signup')
 #     def post(self):
 #         data = request.get_json()
 #         user = User.query.filter_by(username = data.get('username')).first()
+
+
+#~~~~~~~~~~~~#
+#AUTH#
+class AuthorizedSession(Resource):
+    def get(self):
+        try:
+            user = User.query.filter_by(
+                id = session.get('user_id')).first()
+            return make_response(user.to_dict(), 200)
+        except:
+            return make_response({'message': 'Must log in'}, 401)
+api.add_resource(AuthorizedSession, '/authorize_session')
+
 #~~~~~~~Users~~~~~~~~~#
-class CurrentUser(Resource):
-   def get(self, username):
-      user = User.query.filter(User.username == username).first()
-      if not user:
-            return make_response("User not found", 404)
-      return make_response(user.to_dict(), 200)
-api.add_resource(CurrentUser, '/users/<string:username>')
+
 class Users(Resource):
    def get(self):
       users = User.query.all()
@@ -192,6 +200,15 @@ class Users(Resource):
       return res
    
 api.add_resource(Users, '/users')
+class CurrentUser(Resource):
+   def get(self, username):
+      user = User.query.filter(User.username == username).first()
+      if not user:
+            return make_response("User not found", 404)
+      return make_response(user.to_dict(), 200)
+api.add_resource(CurrentUser, '/users/<string:username>')
+
+
 
 
 

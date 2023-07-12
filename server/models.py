@@ -54,7 +54,7 @@ class Collection(db.Model, SerializerMixin):
 ##RELATIONSHIPS    
     artworks = db.relationship('User', back_populates='collections')  
 ##VALIDATIONS
-
+    serialize_rules = ("-artworks.collections",)
 # #~~~~~~~~~~~~~~~# 
 class Artist(db.Model, SerializerMixin):
     __tablename__ = "artists"
