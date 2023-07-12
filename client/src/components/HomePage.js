@@ -19,9 +19,12 @@ function HomePage({artworks}){
              <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
              <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '400px' }} />
              <section>
-             <p>{artwork.artists.name}</p>
-              <p>{artwork.title}</p>
-             </section>
+             <div className="carousel-text">
+            <p style={{ marginTop: '10px', fontSize: '12px' }}>{artwork.artists.name}, {artwork.title}</p> 
+            <p style={{ marginTop: '30px' }}></p>
+           
+          </div>
+             </section> 
            </div>
          ))}
           </Carousel>
