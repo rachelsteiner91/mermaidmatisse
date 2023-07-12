@@ -2,10 +2,20 @@ import React from 'react';
 
 
 function Search(){
+  // function handleChange(e) {
+  //   setSearch(e.target.value)
+  // }
+
 
     return(
         <div className="search-container">
-        <input type="text" placeholder="Search by style" />
+        <input 
+       
+        type="text" 
+        id="search"
+        placeholder="Search by style" 
+        // onChange={(e) => handleChange(e)}
+        />
         <button type="button">Search</button>
       </div>
     );
@@ -25,7 +35,7 @@ export default Search
 //             value={search}
 //             type="text"
 //             id="search"
-//             placeholder="Search by city, or by park..."
+//             placeholder="Search by style..."
 //             onChange={(e) => handleChange(e)}
 //         />
 //         <button type="button">Search</button>

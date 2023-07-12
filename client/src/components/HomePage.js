@@ -20,13 +20,13 @@ function HomePage({artworks}){
              <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '400px' }} />
              <section>
              <div className="carousel-text">
-            <p style={{ marginTop: '10px', fontSize: '12px' }}>{artwork.artists.name}, {artwork.title}</p> 
+            <p style={{  fontSize: '12px' }}>{artwork.artists.name}, {artwork.title}</p> 
             <p style={{ marginTop: '30px' }}></p>
-           
           </div>
              </section> 
            </div>
          ))}
+         
           </Carousel>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -38,7 +38,7 @@ function HomePage({artworks}){
           <span className="visually-hidden">Next</span>
         </button>
       </div>
- 
+      
 <div className="image-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
         {artworks.map((artwork, index) => (
           <img key={index} src={artwork.image} alt={`Artwork ${index + 1}`} className="grid-image" style={{ width: '100%', height: 'auto' }} />

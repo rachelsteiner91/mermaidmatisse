@@ -4,9 +4,7 @@ import Search from './Search'
 // import NavBar from './NavBar';
 
 // TO DO TODAY WEDNESDAY 
-//add artist and title of artwork on main page under artwork carousel
 //auth login
-// add Ana Benaroya to seed data http://www.anabenaroya.com/
 // collection part
 //favorites button maybe? add to collection
 

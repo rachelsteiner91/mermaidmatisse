@@ -16,7 +16,8 @@ function ArtCard({ artwork, addToCollection }) {
   // }
 
   return (
-    <li className="card" id={id}>
+   
+    <div className="card" id={id}  >
       <figure className="image">
         <img
           src={image}
@@ -40,7 +41,8 @@ function ArtCard({ artwork, addToCollection }) {
           
         )}
       </section>
-    </li>
+    </div>
+    
   );
 }
 

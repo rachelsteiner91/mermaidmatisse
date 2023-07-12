@@ -4,7 +4,8 @@ function ArtistCard({ artist }) {
     const { name, medium, id } = artist;
 
   return (
-    <li className="card" id={id}>
+    <div className="card" id={id}>
+    {/* <li className="card" id={id}> */}
     <figure className="artist">
        
     </figure>
@@ -14,7 +15,7 @@ function ArtistCard({ artist }) {
         </Link>
         <p>{medium}</p>
     </section>
-</li>
+</div>
   )
 }
 
