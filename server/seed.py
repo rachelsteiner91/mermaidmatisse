@@ -54,7 +54,8 @@ if __name__ == '__main__':
             Artist(name="Ellen Berkenbilt", medium="painting"),
             Artist(name="Kyle Dunn", medium="acrylic on wood"),
             Artist(name="Dominic Chambers", medium="painting"),
-            Artist(name="Sophia Heymans", medium="multimedia")
+            Artist(name="Sophia Heymans", medium="multimedia"),
+            Artist(name="Ana Benaroya", medium="painting")
         ]
         db.session.add_all(artists)
         db.session.commit()
@@ -86,7 +87,9 @@ if __name__ == '__main__':
             Artwork(title="Downward Dog", artist_id=14, medium="acrylic on wood", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128477120650301520/IMG_5A69CE0B82F5-1.jpeg"),
             Artwork(title="Night Pictures", artist_id=14, medium="acrylic on wood", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128477791868948571/IMG_CF6B99484656-1.jpeg"),
             Artwork(title="Courts (meditation in black)", artist_id=15, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128485218047754240/IMG_C59F46881C3F-1.jpeg"),
-            Artwork(title="Fallen Daughters", artist_id=16, medium="papier mache, molding paste, multimedia, oil on canvas", style_id=2, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128484369405837453/IMG_CF8BDFADF28E-1.jpeg")
+            Artwork(title="Fallen Daughters", artist_id=16, medium="papier mache, molding paste, multimedia, oil on canvas", style_id=2, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128484369405837453/IMG_CF8BDFADF28E-1.jpeg"),
+            Artwork(title="A Full Moon", artist_id=17, medium="painting", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128697183076614246/AnaBenaroya_AFullMoon.jpg"),
+            Artwork(title="By The Ocean's Roar", artist_id=17, medium="painting", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128698800219881552/ABENA015_001.jpg")
         ]
         db.session.add_all(artworks)
         db.session.commit()

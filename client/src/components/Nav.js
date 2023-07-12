@@ -3,7 +3,26 @@ import {  Link, NavLink } from "react-router-dom";
 import Search from './Search'
 // import NavBar from './NavBar';
 
+// TO DO TODAY WEDNESDAY 
+//add artist and title of artwork on main page under artwork carousel
+//auth login
+// add Ana Benaroya to seed data http://www.anabenaroya.com/
+// collection part
+//favorites button maybe? add to collection
+
+
+
 function Nav() {
+  // maybe the search should actually be in App? ask Greem
+  // const [search, setSearch] = useState('')
+
+//   const handleSearch = (newStr) => {
+//     setSearch(newStr)
+//   }
+
+//  const filteredArts = [...artworks].filter(artwork =>
+//     artwork.name.toLowerCase().includes(search.toLowerCase()))
+// search={search} handleSearch={handleSearch}
   return (
     
       <header>

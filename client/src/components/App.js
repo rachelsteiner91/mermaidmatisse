@@ -95,4 +95,3 @@ export default App;
 // <Route path="/artists" element={<Artists artists={artists} />} />
 // <Route path="/styles/:id" element={<StyleDetail />} />
 
-//add images to seed data and models for styles
