@@ -52,7 +52,9 @@ if __name__ == '__main__':
             Artist(name="Danielle McKinney", medium="painting"),
             Artist(name="Noah Verrier", medium="painting"),
             Artist(name="Ellen Berkenbilt", medium="painting"),
-            Artist(name="Kyle Dunn", medium="acrylic on wood")
+            Artist(name="Kyle Dunn", medium="acrylic on wood"),
+            Artist(name="Dominic Chambers", medium="painting"),
+            Artist(name="Sophia Heymans", medium="multimedia")
         ]
         db.session.add_all(artists)
         db.session.commit()
@@ -82,7 +84,9 @@ if __name__ == '__main__':
             Artwork(title="untitled", artist_id=12, medium="print", style_id=4, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128473889475924070/IMG_07E4D9373890-1.jpeg"),
             Artwork(title="Circa", artist_id=13, medium="painting", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128476093939195984/IMG_BD46ABE633B0-1.jpeg"),
             Artwork(title="Downward Dog", artist_id=14, medium="acrylic on wood", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128477120650301520/IMG_5A69CE0B82F5-1.jpeg"),
-            Artwork(title="Night Pictures", artist_id=14, medium="acrylic on wood", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128477791868948571/IMG_CF6B99484656-1.jpeg")
+            Artwork(title="Night Pictures", artist_id=14, medium="acrylic on wood", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128477791868948571/IMG_CF6B99484656-1.jpeg"),
+            Artwork(title="Courts (meditation in black)", artist_id=15, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128485218047754240/IMG_C59F46881C3F-1.jpeg"),
+            Artwork(title="Fallen Daughters", artist_id=16, medium="papier mache, molding paste, multimedia, oil on canvas", style_id=2, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128484369405837453/IMG_CF8BDFADF28E-1.jpeg")
         ]
         db.session.add_all(artworks)
         db.session.commit()
