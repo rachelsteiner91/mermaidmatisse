@@ -14,17 +14,17 @@ function Signup() {
   };
 
   if (signedUp) {
-    return <Link to="/collections/:id">Go to Collections</Link>;
+    return <Link to="/collections">Go to Collections</Link>;
   }
 
   return (
     <form className="pure-form pure-form-stacked" onSubmit={handleSignup}>
       <fieldset>
-        <legend>Log In</legend>
+        <legend>Sign Up</legend>
         <label htmlFor="stacked-email">Username</label>
         <input
-          type="email"
-          id="stacked-email"
+          type="username"
+          id="stacked-username"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}

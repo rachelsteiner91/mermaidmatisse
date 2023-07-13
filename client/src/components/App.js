@@ -10,15 +10,38 @@ import Artist from './Artist'
 import ArtistDetail from './ArtistDetail'
 import Collection from './Collection'
 import Signup from './Signup'
+import UserContext from '../UserContext';
+import Login from './Login'
 // import CollectionDetail from './CollectionDetail'
 
 
 function App() {
+  const [user, setUser] = useState(null)
   const [artworks, setArtworks] = useState([])
   const [styles, setStyles] = useState([])
   const [artists, setArtists] = useState([])
   const [collection, setCollection] = useState([]);
- 
+
+  console.log(user)
+  useEffect(() => {
+    if (user === null) {
+      fetch('http://localhost:5555/check_session')
+        .then(response => {
+          if (response.ok) {
+            response.json().then(user => {
+              setUser(user);
+            });
+          } else {
+            setUser(null)
+          }
+        })
+        .catch(error => {
+          console.log(error)
+        });
+    }
+  }, [user]);
+  
+
   console.log(artworks)
   useEffect(() => {
       getArtworks();
@@ -66,12 +89,15 @@ function App() {
           };
   // Code goes here!
   return (
+    <UserContext.Provider value={{user, setUser}}>
     <div className = "app">
       Mermaid Matisse
       <Router>
       <Nav />
       <Routes>
+        
         <Route path="/" element={<HomePage artworks={artworks}/>} />
+        <Route path="/login" element={<Login />} />
         <Route path="/artworks" element={<ArtContainer artworks={artworks} addToCollection={addToCollection}/>}/>
         <Route path="/artworks/:id" element={<ArtDetail />} />
         <Route path="/styles" element={<ByStyle styles={styles}/>} />
@@ -84,6 +110,7 @@ function App() {
       </Routes>
     </Router>
     </div>
+    </UserContext.Provider>
   )
 
 }

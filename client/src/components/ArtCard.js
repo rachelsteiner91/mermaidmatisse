@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import UserContext from "../UserContext";
 import { Link } from "react-router-dom";
 
 // NOTE - THE BUTTON TO ADD TO COLLECTION NEEDS TO BE ROUTED TO COLLECTIONS/:ID INSTREAD
 function ArtCard({ artwork, addToCollection }) {
   const { id, title, image, artists, medium, style } = artwork;
   const [isAdded, setIsAdded] = useState(false);
+  const {user} = useContext(UserContext)
+  console.log(user)
 
   const handleAddToCollection = () => {
+    fetch("http://localhost:5555/collections", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "artwork_id": artwork.id
+      }),
+    })
     setIsAdded(true);
     addToCollection(artwork);
  
@@ -47,3 +59,4 @@ function ArtCard({ artwork, addToCollection }) {
 }
 
 export default ArtCard;
+

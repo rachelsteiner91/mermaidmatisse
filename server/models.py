@@ -1,31 +1,43 @@
 from sqlalchemy_serializer import SerializerMixin
+from flask_login import UserMixin, LoginManager
+from sqlalchemy.ext.hybrid import hybrid_property
 
 
-from config import db
-
-
-#~~~~~~~~~~~~~~~#
-from sqlalchemy_serializer import SerializerMixin
-
-
-from config import db
+from config import db, bcrypt
 
 # Models go here!
 
 ##USER
-class User(db.Model, SerializerMixin):
+class User(db.Model, SerializerMixin, UserMixin):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     username = db.Column(db.String, nullable=False)
+    _password_hash = db.Column(db.String(128), nullable=False)
     role = db.Column(db.String)
     created_at = db.Column(db.DateTime)
 ## USER RELATIONSHIPS
-    collections = db.relationship('Collection', back_populates='artworks')
+    # collections = db.relationship('Collection', back_populates='user', uselist=False)
+
+    collections = db.relationship('Collection', back_populates='artworks', uselist=False)
     # art_collection = db.relationship('ArtCollection', back_populates='user.id')
 ##VALIDATIONS
     serialize_rules = ('-collections.artworks',)
+
+    @hybrid_property
+    def password_hash(self):
+        raise Exception('Password hashes may not be viewed.')
+
+    @password_hash.setter
+    def password_hash(self, password):
+        password_hash = bcrypt.generate_password_hash(
+            password.encode('utf-8'))
+        self._password_hash = password_hash.decode('utf-8')
+
+    def authenticate(self, password):
+        return bcrypt.check_password_hash(
+            self._password_hash, password.encode('utf-8'))
 # #~~~~~~~~~~~~~~~# 
 class Artwork(db.Model, SerializerMixin):
     __tablename__ = "artworks"
@@ -51,10 +63,11 @@ class Collection(db.Model, SerializerMixin):
     artwork_id = db.Column(db.Integer, db.ForeignKey('artworks.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     created_at = db.Column(db.DateTime)
-##RELATIONSHIPS    
+##RELATIONSHIPS   
+    # user = db.relationship('User', back_populates='collections') 
     artworks = db.relationship('User', back_populates='collections')  
 ##VALIDATIONS
-    serialize_rules = ("-artworks.collections",)
+    serialize_rules = ("-artworks.collections", "-user.collections")
 # #~~~~~~~~~~~~~~~# 
 class Artist(db.Model, SerializerMixin):
     __tablename__ = "artists"

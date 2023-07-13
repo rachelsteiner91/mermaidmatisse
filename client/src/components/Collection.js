@@ -15,8 +15,8 @@ function Collection({ collection }) {
         <Link to="/collections:id">
       <h1>My Art Collection</h1>
       </Link>
-      {collection.map((artwork) => (
-        <div key={artwork.id}>
+      {collection.map((artwork, index) => (
+        <div key={index}>
           <h2>{artwork.title}</h2>
           <img
             src={artwork.image}

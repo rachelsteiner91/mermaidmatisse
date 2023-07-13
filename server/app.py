@@ -4,20 +4,29 @@
 
 # Remote library imports
 from flask import request
+import traceback
 from flask_restful import Resource
 from flask_migrate import Migrate
 from flask import Flask, request, session, make_response, jsonify, redirect
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+# from werkzeug.security import generate_password_hash
 
 # Local imports
 from config import app, db, api 
 from models import db, User, Artist, Collection, Artwork, Style
 
 migrate = Migrate(app, db)
+login_manager = LoginManager()
+login_manager.init_app(app)
 # Views go here!
 @app.route("/")
 # @cross_origin()
 def howdy():
   return "Howdy partner!"
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.filter_by(id=user_id).first()
 
 
 #~~~~~~~Artworks~~~~~~~~~#
@@ -108,23 +117,25 @@ api.add_resource(OneArtist, "/artists/<int:id>")
 class NewCollection(Resource):
     def get(self):
         collections = Collection.query.all()
-        collections_dict = [c.to_dict(only = ("id","artwork_id", "user_id")) for c in collections]
+        collections_dict = [c.to_dict(only = ("id","artwork_id", "user_id", "user.collections")) for c in collections]
         return make_response(collections_dict, 200)
+    @login_required
     def post(self):
         data=request.get_json()
-       
+        user= current_user.id
         try:
             new_collection = Collection(
                 artwork_id = data.get('artwork_id'),
-                user_id = data.get('user_id')
+                user_id = user
             )
             db.session.add(new_collection)
             db.session.commit()
-        except:
-            return make_response({"ERROR"}, 422)
-        
-        return make_response(new_collection.to_dict(), 201)
+            return new_collection.to_dict(), 200
+        except Exception as e:
+            traceback.print_exc()
+            return {"ERROR": "funky message", "details": str(e)}, 422   
 api.add_resource(NewCollection, '/collections')
+
 class UserCollection(Resource):
     def get(self, id):
         one_collection = Collection.query.filter_by(id=id).first()
@@ -163,29 +174,51 @@ class Signup(Resource):
          username = data.get('username'),
          role = data.get('role')
       )
+      new_user.password_hash = data['password']
+      new_collection = Collection()
+      new_user.collections = new_collection
       db.session.add(new_user)
       db.session.commit()
-      session['user_id'] = new_user.id
-      return make_response(new_user.to_dict(), 201)
+      login_user(new_user, remember=True)
+      return new_user.to_dict(), 201
 api.add_resource(Signup, '/signup')
 #~~~~~~Login~~~~~~~#
-# class Login(Resource):
-#     def post(self):
-#         data = request.get_json()
-#         user = User.query.filter_by(username = data.get('username')).first()
+
+class Login(Resource):
+    def post(self):
+        data = request.get_json()
+        username = data.get('username')
+        password = data.get('password')
+
+        user = User.query.filter(
+            User.username == username
+        ).first()
+
+        if user:
+            if user.authenticate(password):
+                login_user(user, remember=True)
+                return user.to_dict(), 200
+        if not user:
+            return {'error': '404 user not found'}, 404
+api.add_resource(Login, '/login')
 
 
 #~~~~~~~~~~~~#
 #AUTH#
-class AuthorizedSession(Resource):
+class CheckSession(Resource):
     def get(self):
-        try:
-            user = User.query.filter_by(
-                id = session.get('user_id')).first()
-            return make_response(user.to_dict(), 200)
-        except:
-            return make_response({'message': 'Must log in'}, 401)
-api.add_resource(AuthorizedSession, '/authorize_session')
+        if current_user.is_authenticated:
+            user = current_user.to_dict()
+            return user, 200
+        return {"error": "unauthorized"}, 401
+api.add_resource(CheckSession, '/check_session')
+
+#~~~~~~~~~LOGOUT~~~~~#
+@app.route("/logout", methods=["POST"])
+@login_required
+def logout():
+    logout_user()
+    return f'You have logged out.'
 
 #~~~~~~~Users~~~~~~~~~#
 

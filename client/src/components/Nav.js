@@ -49,10 +49,10 @@ function Nav() {
             Collection
           </NavLink>
           <NavLink className="button" to="/signup">
-            Artwork Discovery
+            Sign Up
           </NavLink>
-          <NavLink className="button" to="/staffpicks">
-            Staff Picks
+          <NavLink className="button" to="/login">
+            Log In
           </NavLink>
           <NavLink className="button" to="/about">
             About Us
