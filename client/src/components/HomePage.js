@@ -17,7 +17,7 @@ function HomePage({artworks}){
           <Carousel>
           {artworks.map((artwork, index) => (
              <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-             <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '400px' }} />
+             <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '500px' }} />
              <section>
              <div className="carousel-text">
             <p style={{  fontSize: '12px' }}>{artwork.artists.name}, {artwork.title}</p> 
@@ -38,8 +38,8 @@ function HomePage({artworks}){
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      
-<div className="image-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
+     
+<div className="image-grid" style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
         {artworks.map((artwork, index) => (
           <img key={index} src={artwork.image} alt={`Artwork ${index + 1}`} className="grid-image" style={{ width: '100%', height: 'auto' }} />
         ))}

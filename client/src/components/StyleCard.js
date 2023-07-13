@@ -4,7 +4,7 @@ function StyleCard({ style }) {
     const { style_type, id } = style;
 
   return (
-    <li className="card" id={id}>
+    <div className="card" id={id}>
     <figure className="style">
        
     </figure>
@@ -12,9 +12,9 @@ function StyleCard({ style }) {
         <Link to={`/styles/${id}`}>
             <h2>{style_type}</h2>
         </Link>
-        <p>Styles</p>
+        <p>Insert Images here</p>
     </section>
-</li>
+</div>
   )
 }
 
