@@ -4,7 +4,7 @@ import ArtCard from './ArtCard'
 // import {useNavigate} from "react-router-dom"
 
 function ArtContainer({ artworks, addToCollection}) {
-   
+  console.log(artworks) 
     return (
         <section>
             <ul className='cards'>
