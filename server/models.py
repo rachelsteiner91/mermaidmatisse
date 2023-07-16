@@ -75,6 +75,8 @@ class Artist(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     medium = db.Column(db.String)
+    image = db.Column(db.String)
+    description = db.Column(db.String)
 ##RELATIONSHIPS 
     artworks = db.relationship('Artwork', back_populates='artists')
 

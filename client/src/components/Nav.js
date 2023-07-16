@@ -14,13 +14,7 @@ function Nav() {
   // maybe the search should actually be in App? ask Greem
   // const [search, setSearch] = useState('')
 
-//   const handleSearch = (newStr) => {
-//     setSearch(newStr)
-//   }
 
-//  const filteredArts = [...artworks].filter(artwork =>
-//     artwork.name.toLowerCase().includes(search.toLowerCase()))
-// search={search} handleSearch={handleSearch}
   return (
     
       <header>

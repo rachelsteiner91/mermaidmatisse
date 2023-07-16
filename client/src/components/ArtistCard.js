@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function ArtistCard({ artist }) {
-    const { name, medium, id } = artist;
+    const { name, medium, id, image, description } = artist;
 
   return (
     <div className="card" id={id}>
@@ -11,9 +11,16 @@ function ArtistCard({ artist }) {
     </figure>
     <section className="details">
         <Link to={`/artists/${id}`}>
+        <img
+            src={image}
+            alt={description}
+            style={{ maxWidth: "400px", maxHeight: "400px" }}
+          />
+          </Link>
             <h2>{name}</h2>
-        </Link>
+        
         <p>{medium}</p>
+        <p>{description}</p>
     </section>
 </div>
   )

@@ -88,7 +88,7 @@ api.add_resource(OneStyle, "/styles/<int:id>")
 class Artists(Resource):
    def get(self):
       artists = Artist.query.all()
-      artists_dict = [a.to_dict(only=('id', 'name', 'medium', 'artworks.title', 'artworks.image')) for a in artists]
+      artists_dict = [a.to_dict(only=('id', 'name', 'medium', 'image', 'description', 'artworks.title', 'artworks.image')) for a in artists]
       res = make_response(
          artists_dict,
          200
@@ -103,7 +103,7 @@ class OneArtist(Resource):
             return {"404": "Artist Not Found"}, 404
         
         res = make_response(
-            artist.to_dict(only=('id', 'name', 'medium', 'artworks.title', 'artworks.image')),
+            artist.to_dict(only=('id', 'name', 'medium', 'image', 'description', 'artworks.title', 'artworks.image')),
             200
         )
         return res
