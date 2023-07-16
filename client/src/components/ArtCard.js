@@ -31,16 +31,18 @@ function ArtCard({ artwork, addToCollection }) {
    
     <div className="card" id={id}  >
       <figure className="image">
+      <Link to={`/artworks/${id}`}>
         <img
           src={image}
           alt={artists.name}
           style={{ maxWidth: "400px", maxHeight: "400px" }}
         />
+        </Link>
       </figure>
       <section className="details">
-        <Link to={`/artworks/${id}`}>
+        
           <h2>{title}</h2>
-        </Link>
+       
         <p>
           {artists.name}, {medium}, {style.style_type}
         </p>
