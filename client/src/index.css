@@ -68,9 +68,11 @@ line-height: normal;
 
 .card {
   background-color: #ffffff;
+  /* display:flexbox; */
+ 
   /* display: flex; */
-  
 }
+
 /* .card-details {
   display:flex
 } */

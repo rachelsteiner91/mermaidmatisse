@@ -31,7 +31,7 @@ function ArtCard({ artwork, addToCollection }) {
 
   return (
    
-    <div className="card" id={id}  >
+    <div className="card" id={id} >
       <figure className="image" >
       <Link to={`/artworks/${id}`}>
         <img

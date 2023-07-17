@@ -97,12 +97,14 @@ function App() {
   return (
     <UserContext.Provider value={{user, setUser}}>
     <div className = "app">
-    <h1 className="extra-bold" style={{}}>
-          Mermaid Matisse
-          </h1>
+    
       {/* Mermaid Matisse */}
       <Router>
-      <Search onSearchChange={onSearchChange} search={search}/>
+      
+      <h1 className="extra-bold" style={{fontWeight: 'extra-bold'}}>
+          Mermaid Matisse
+      </h1>
+        <Search onSearchChange={onSearchChange} search={search}/>
       <Nav />
       <Routes>
         
