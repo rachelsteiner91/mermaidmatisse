@@ -99,13 +99,15 @@ function App() {
     <div className = "app">
     
       {/* Mermaid Matisse */}
+      {/* style={{fontWeight: 'extra-bold', position: 'fixed', top: '0', left: '0', width: '100%', backgroundColor: '#fff'}} */}
       <Router>
       
       <h1 className="extra-bold" style={{fontWeight: 'extra-bold'}}>
           Mermaid Matisse
       </h1>
-        <Search onSearchChange={onSearchChange} search={search}/>
+      
       <Nav />
+      <Search onSearchChange={onSearchChange} search={search}/>
       <Routes>
         
         <Route path="/" element={<HomePage artworks={filteredArtworks} />} />

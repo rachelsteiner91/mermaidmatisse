@@ -11,7 +11,7 @@ function Search({search, onSearchChange}) {
         id="search"
         placeholder="Search..."
         onChange={(e) => onSearchChange(e.target.value)} 
-        style={{ background: '#EEE9E9' }}
+        style={{ background: '#F9F4F4' }}
       />
     </div>
   );
