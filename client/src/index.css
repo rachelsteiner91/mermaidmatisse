@@ -29,6 +29,7 @@ line-height: normal;
   }
 .menu {
     background: #EEE9E9;
+    /* background-image: url("https://cdn.discordapp.com/attachments/1113536081091108996/1130590176347963553/Screenshot_2023-07-17_at_4.01.27_PM.png"); */
     width: 739px;
     height: 30px;
     color: #000;
@@ -54,6 +55,8 @@ line-height: normal;
     
 }
 
+
+
 /* .image-grid a:hover {
   background-color:darkseagreen;
   
@@ -61,8 +64,10 @@ line-height: normal;
 /* .details a:hover {
     background-color:darkseagreen;
 } */
+/* background-color: #F9F4F4; */
 .carousel-inner {
     background-color: #F9F4F4;
+   
     
 }
 

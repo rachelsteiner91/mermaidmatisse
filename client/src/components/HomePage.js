@@ -10,11 +10,12 @@ function HomePage({artworks}){
             <h3>Discover Art</h3>
             </Link> 
             <h3>New Arrivals</h3>
+            
 
       
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
-          <Carousel>
+          <Carousel autoPlay={true} infiniteLoop={true} interval={4000}>
           {artworks.map((artwork, index) => (
              <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
              <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '500px' }} />
