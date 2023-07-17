@@ -68,8 +68,12 @@ line-height: normal;
 
 .card {
   background-color: #ffffff;
+  /* display: flex; */
   
 }
+/* .card-details {
+  display:flex
+} */
 /* .navbar {
     background: #EEE9E9;
     width: 739px;

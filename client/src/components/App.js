@@ -13,6 +13,7 @@ import Signup from './Signup'
 import UserContext from '../UserContext';
 import Login from './Login'
 import Search from './Search'
+import About from './About'
 // import CollectionDetail from './CollectionDetail'
 
 
@@ -79,7 +80,7 @@ function App() {
             setSearch(prevSearch => newSearch)
           }
         const filteredArtworks = [...artworks].filter((el) => {
-            return el.title.toLowerCase().includes(search.toLowerCase())
+            return el.title.toLowerCase().includes(search.toLowerCase()) || el.artists.name.toLowerCase().includes(search.toLowerCase())
       })
         const filteredArtists = [...artists].filter((el) => {
           return el.name.toLowerCase().includes(search.toLowerCase())
@@ -116,6 +117,7 @@ function App() {
         <Route path="/collections" element={<Collection collection={collection} />} />
         {/* <Route path="/collections/:id" element={<CollectionDetail />} /> */}
         <Route path="/signup" element={<Signup />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
     </div>

@@ -124,6 +124,7 @@ function ArtDetail() {
     <div className="art-detail" id={id}>
       <h2>{title}</h2>
       <p>{artists.name}</p>
+      <p style={{fontSize: '10px', fontStyle: 'italic'}}>*click on artwork image to zoom in* </p>
 
       <div className="project-card">
         <figure className="image">

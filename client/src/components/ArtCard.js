@@ -27,25 +27,25 @@ function ArtCard({ artwork, addToCollection }) {
   //   return <Link to="/collections/:id">Go to Collections</Link>;
   // }
 
+//  style= {{ maxWidth: "400px", maxHeight: "400px" }}
+
   return (
    
     <div className="card" id={id}  >
-      <figure className="image" style={{ maxWidth: "400px", maxHeight: "400px" }}>
+      <figure className="image" >
       <Link to={`/artworks/${id}`}>
         <img
           src={image}
           alt={artists.name}
-          style={{ maxWidth: "400px", maxHeight: "400px" }}
+          style={{ width: '100%', height: 'auto' }}
         />
         </Link>
       </figure>
-      <section className="details">
+      <section className="details" style={{ width: '100%', height: 'auto' }}>
         
-          <h2>{title}</h2>
-       
-        <p>
-          {artists.name}, {medium}, {style.style_type}
-        </p>
+        <h2 style={{fontSize: '14px', fontWeight: 'bold'}}>{artists.name}</h2>
+        <p style={{fontSize: '14px'}}> {title}</p> 
+        <p  style={{fontSize: '12px', fontStyle: 'italic'}}> {medium}, {style.style_type} </p>
         {!isAdded ? (
           <button onClick={handleAddToCollection}>Add to Art Collection</button>
         ) : (

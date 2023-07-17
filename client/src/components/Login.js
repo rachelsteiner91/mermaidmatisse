@@ -60,7 +60,7 @@ function Login(){
               <div className="error-message">{errorMessage}</div>
             )}
               <div className="form-group">
-                <label htmlFor="username">Username or Email:</label>
+                <label htmlFor="username">Username:</label>
                 <Field
                   type="text"
                   name="username"
