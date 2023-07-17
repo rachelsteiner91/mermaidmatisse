@@ -117,7 +117,7 @@ api.add_resource(OneArtist, "/artists/<int:id>")
 class NewCollection(Resource):
     def get(self):
         collections = Collection.query.all()
-        collections_dict = [c.to_dict(only = ("id","artwork_id", "user_id", "user.collections")) for c in collections]
+        collections_dict = [c.to_dict(only = ("id","artwork_id", "user_id",)) for c in collections]
         return make_response(collections_dict, 200)
     @login_required
     def post(self):

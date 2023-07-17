@@ -54,7 +54,15 @@ line-height: normal;
     background-color:darkseagreen;
     
 }
+/* .carousel .carousel-item {
+  opacity: 1;
+  transition: opacity 10s ease-in-out;
+} 
 
+.carousel .carousel-item.carousel-item-active {
+  opacity: 1;
+  
+} */
 
 
 /* .image-grid a:hover {

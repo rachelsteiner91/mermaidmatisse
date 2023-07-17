@@ -25,27 +25,51 @@ function App() {
   const [collection, setCollection] = useState([]);
   const [search, setSearch] = useState('')
 
-  console.log(user)
+  // console.log(user)
   useEffect(() => {
-    if (user === null) {
-      fetch('http://localhost:5555/check_session')
-        .then(response => {
-          if (response.ok) {
-            response.json().then(user => {
-              setUser(user);
-            });
-          } else {
-            setUser(null)
-          }
-        })
-        .catch(error => {
-          console.log(error)
-        });
-    }
-  }, [user]);
+    fetchUser()
+   
+  },[])
+
+
+  const fetchUser = () => {
+    // 8.✅ Create a GET fetch that goes to '/authorized'
+    fetch('http://localhost:5555/check_session')
+      // If returned successfully set the user to state and fetch our productions
+      .then(res => {
+        if(res.ok){       
+          res.json().then(user => {
+            console.log("-----authorized user from server session -------")
+            console.log(user)
+            setUser(user)
+           
+          })
+        }else{
+          setUser(null)// else set the user in state to Null
+        }
+      })
+  }
+  // useEffect(() => {
+  //   if (user === null) {
+  //     fetch('http://localhost:5555/check_session')
+  //       .then(response => {
+  //         if (response.ok) {
+  //           response.json().then(user => {
+  //             console.log(user)
+  //             setUser(user);
+  //           });
+  //         } else {
+  //           setUser(null)
+  //         }
+  //       })
+  //       .catch(error => {
+  //         console.log(error)
+  //       });
+  //   }
+  // }, [user]);
   
 
-  console.log(artworks)
+ 
   useEffect(() => {
       getArtworks();
   },[]);
@@ -101,11 +125,9 @@ function App() {
       {/* Mermaid Matisse */}
       {/* style={{fontWeight: 'extra-bold', position: 'fixed', top: '0', left: '0', width: '100%', backgroundColor: '#fff'}} */}
       <Router>
-      
       <h1 className="extra-bold" style={{fontWeight: 'extra-bold'}}>
           Mermaid Matisse
       </h1>
-      
       <Nav />
       <Search onSearchChange={onSearchChange} search={search}/>
       <Routes>
@@ -118,7 +140,7 @@ function App() {
         <Route path="/styles/:id" element={<StyleDetail />} />
         <Route path="/artists" element={<Artist artists={filteredArtists} />} />
         <Route path="/artists/:id" element={<ArtistDetail />} />
-        <Route path="/collections" element={<Collection collection={collection} />} />
+        <Route path="/collections" element={<Collection collection={collection}  />} />
         {/* <Route path="/collections/:id" element={<CollectionDetail />} /> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/about" element={<About />} />
