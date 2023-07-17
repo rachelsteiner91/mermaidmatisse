@@ -1,27 +1,23 @@
-import React from 'react';
+import React from "react";
 
+function Search({search, onSearchChange}) {
 
-function Search(){
-  // function handleChange(e) {
-  //   setSearch(e.target.value)
-  // }
-
-
-    return(
-        <div className="search-container">
-        <input 
-       
-        type="text" 
+  return (
+    <div className="searchbar" style={{ display: 'flex', alignItems: 'center' }}>
+      <label htmlFor="search"></label>
+      <input
+        value={search}
+        type="text"
         id="search"
-        placeholder="Search by style" 
-        // onChange={(e) => handleChange(e)}
-        />
-        <button type="button">Search</button>
-      </div>
-    );
-  }
+        placeholder="Search..."
+        onChange={(e) => onSearchChange(e.target.value)} 
+        style={{ background: '#EEE9E9' }}
+      />
+    </div>
+  );
+}
 
-export default Search
+export default Search;
 
 // function Search({setSearch, search}) {
 //     function handleChange(e) {

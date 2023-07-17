@@ -12,6 +12,7 @@ import Collection from './Collection'
 import Signup from './Signup'
 import UserContext from '../UserContext';
 import Login from './Login'
+import Search from './Search'
 // import CollectionDetail from './CollectionDetail'
 
 
@@ -21,6 +22,7 @@ function App() {
   const [styles, setStyles] = useState([])
   const [artists, setArtists] = useState([])
   const [collection, setCollection] = useState([]);
+  const [search, setSearch] = useState('')
 
   console.log(user)
   useEffect(() => {
@@ -73,16 +75,19 @@ function App() {
               .then(data => setArtists(data))
       
           }
-        //   useEffect(() => {
-        //     getCollections();
-        // },[]);
-        
-        // function getCollections(){
-        //     fetch ('http://localhost:5555/collections')
-        //         .then(response => response.json())
-        //         .then(data => setCollection(data))
-        
-        //     }
+          function onSearchChange(newSearch){
+            setSearch(prevSearch => newSearch)
+          }
+        const filteredArtworks = [...artworks].filter((el) => {
+            return el.title.toLowerCase().includes(search.toLowerCase())
+      })
+        const filteredArtists = [...artists].filter((el) => {
+          return el.name.toLowerCase().includes(search.toLowerCase())
+        })
+        const filteredStyles = [...styles].filter((el) => {
+          return el.style_type.toLowerCase().includes(search.toLowerCase())
+        })
+            
           const addToCollection = (artwork) => {
             artwork.isAdded = true;
             setCollection([...collection, artwork]);
@@ -91,18 +96,22 @@ function App() {
   return (
     <UserContext.Provider value={{user, setUser}}>
     <div className = "app">
-      Mermaid Matisse
+    <h1 className="extra-bold" style={{}}>
+          Mermaid Matisse
+          </h1>
+      {/* Mermaid Matisse */}
       <Router>
+      <Search onSearchChange={onSearchChange} search={search}/>
       <Nav />
       <Routes>
         
-        <Route path="/" element={<HomePage artworks={artworks}/>} />
+        <Route path="/" element={<HomePage artworks={filteredArtworks} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/artworks" element={<ArtContainer artworks={artworks} addToCollection={addToCollection}/>}/>
+        <Route path="/artworks" element={<ArtContainer artworks={filteredArtworks} addToCollection={addToCollection}/>}/>
         <Route path="/artworks/:id" element={<ArtDetail />} />
-        <Route path="/styles" element={<ByStyle styles={styles}/>} />
+        <Route path="/styles" element={<ByStyle styles={filteredStyles}/>} />
         <Route path="/styles/:id" element={<StyleDetail />} />
-        <Route path="/artists" element={<Artist artists={artists} />} />
+        <Route path="/artists" element={<Artist artists={filteredArtists} />} />
         <Route path="/artists/:id" element={<ArtistDetail />} />
         <Route path="/collections" element={<Collection collection={collection} />} />
         {/* <Route path="/collections/:id" element={<CollectionDetail />} /> */}

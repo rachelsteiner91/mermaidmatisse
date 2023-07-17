@@ -45,7 +45,9 @@ line-height: normal;
     
 
 }
-
+.search {
+  background: #EEE9E9;
+}
 
 .menu a:hover {
     background-color:darkseagreen;

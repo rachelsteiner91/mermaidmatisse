@@ -4,20 +4,18 @@ import { Link } from 'react-router-dom';
 function Signup() {
   const [username, setUsername] = useState('');
   const [name, setName] = useState('');
-  const [password, setPassword] = useState(''); // Add password state
+  const [password, setPassword] = useState(''); 
   const [role, setRole] = useState('New Collector');
   const [signedUp, setSignedUp] = useState(false);
 
   const handleSignup = async (e) => {
     e.preventDefault();
 
-    // Validate password
     if (password === '') {
       console.log('Password cannot be empty');
       return;
     }
 
-    // Create the user object
     const user = {
       username,
       name,
@@ -26,7 +24,6 @@ function Signup() {
     };
 
     try {
-      // Send a POST request to your backend signup endpoint
       const response = await fetch('http://localhost:5555/signup', {
         method: 'POST',
         headers: {
@@ -36,8 +33,6 @@ function Signup() {
       });
 
       if (response.ok) {
-        // Signup successful, perform the login process
-        // You may need to adjust the login endpoint and payload according to your backend implementation
         const loginResponse = await fetch('http://localhost:5555/login', {
           method: 'POST',
           headers: {
@@ -50,18 +45,14 @@ function Signup() {
         });
 
         if (loginResponse.ok) {
-          // Login successful, update the signedUp state
           setSignedUp(true);
         } else {
-          // Handle login error
           console.log('Login failed');
         }
       } else {
-        // Handle signup error
         console.log('Signup failed');
       }
     } catch (error) {
-      // Handle any network or server errors
       console.log('Error:', error.message);
     }
   };

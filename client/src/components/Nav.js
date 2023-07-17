@@ -1,6 +1,6 @@
 import React from "react";
 import {  Link, NavLink } from "react-router-dom";
-import Search from './Search'
+
 // import NavBar from './NavBar';
 
 // TO DO TODAY WEDNESDAY 
@@ -18,20 +18,20 @@ function Nav() {
   return (
     
       <header>
-        <h1 className="extra-bold">
+        {/* <h1 className="extra-bold">
           Mermaid Matisse
           <span className="logo" role="img"></span>
-        </h1>
+        </h1> */}
         <h1>
           <Link to={"/"}></Link>
         </h1>
-        <Search />
+       
         <div className="menu" >
           <NavLink className="button" to="/">
             Home
           </NavLink>
           <NavLink className="button" to="/artworks">
-            View All
+            Discover Art
           </NavLink>
           <NavLink className="button" to="/artists">
             Artists
