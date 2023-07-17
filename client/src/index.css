@@ -54,12 +54,21 @@ line-height: normal;
     
 }
 
+/* .image-grid a:hover {
+  background-color:darkseagreen;
+  
+} */
 /* .details a:hover {
     background-color:darkseagreen;
 } */
 .carousel-inner {
     background-color: #F9F4F4;
     
+}
+
+.card {
+  background-color: #ffffff;
+  
 }
 /* .navbar {
     background: #EEE9E9;

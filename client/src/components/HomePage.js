@@ -17,7 +17,7 @@ function HomePage({artworks}){
           <Carousel>
           {artworks.map((artwork, index) => (
              <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-             <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '500px' }} />
+             <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '600px', maxHeight: '600px' }} />
              <section>
              <div className="carousel-text">
             <p style={{  fontSize: '12px' }}>{artwork.artists.name}, {artwork.title}</p> 

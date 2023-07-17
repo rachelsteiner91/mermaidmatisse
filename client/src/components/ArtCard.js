@@ -30,7 +30,7 @@ function ArtCard({ artwork, addToCollection }) {
   return (
    
     <div className="card" id={id}  >
-      <figure className="image">
+      <figure className="image" style={{ maxWidth: "400px", maxHeight: "400px" }}>
       <Link to={`/artworks/${id}`}>
         <img
           src={image}

@@ -12,9 +12,9 @@ function Collection({ collection }) {
         <Link to="/artworks">
         <h3>Back to Art</h3>
         </Link>
-        <Link to="/collections:id">
+        {/* <Link to="/collections:id">
       <h1>My Art Collection</h1>
-      </Link>
+      </Link> */}
       {collection.map((artwork, index) => (
         <div key={index}>
           <h2>{artwork.title}</h2>

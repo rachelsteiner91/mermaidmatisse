@@ -122,7 +122,7 @@ function ArtDetail() {
 
   return (
     <div className="art-detail" id={id}>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <p>{artists.name}</p>
 
       <div className="project-card">
@@ -134,9 +134,9 @@ function ArtDetail() {
             onClick={handleImageClick} 
           />
           <section>
-            <p>Style: {style.style_type}</p>
-            <p>Artist: {artists.name}</p>
-            <p>Medium: {medium}</p>
+            <p> {artists.name}</p>
+            <p> {medium}</p>
+            <p> {style.style_type}</p>
           </section>
         </figure>
         <section className="details"></section>

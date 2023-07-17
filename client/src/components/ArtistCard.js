@@ -4,12 +4,12 @@ function ArtistCard({ artist }) {
     const { name, medium, id, image, description } = artist;
 
   return (
-    <div className="card" id={id}>
+    <div className="card" id={id} >
     {/* <li className="card" id={id}> */}
     <figure className="artist">
        
     </figure>
-    <section className="details">
+    <section className="details" >
         <Link to={`/artists/${id}`}>
         <img
             src={image}
