@@ -20,7 +20,7 @@ function ArtistDetail() {
       .catch((error) => setError(error.message));
   }, [params.id]);
 
-  const { id, name, medium } = artist;
+  const { id, name, medium, image, description } = artist;
 
   if (error) return <h2>{error}</h2>;
 
@@ -30,10 +30,11 @@ function ArtistDetail() {
 
       <div className="style-card">
         <figure className="image">
-          {/* <img src={image} alt={title} /> */}
+          <img src={image} alt={description} />
           <section>
-            <p>Artist: {name}</p>
-            <p> Medium: {medium}</p>
+            <p> {description}</p>
+            <p>  {medium}</p>
+
           </section>
         </figure>
         <section className="details">{/* Additional details here */}</section>
