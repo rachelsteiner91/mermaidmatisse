@@ -40,7 +40,7 @@ function HomePage({artworks}){
         </button> */}
       </div>
       <Link to="/artworks">
-            <h2>Discover Art</h2>
+            <h3>Discover Art</h3>
             </Link>  
 <div className="image-grid" style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
         {artworks.map((artwork, index) => (

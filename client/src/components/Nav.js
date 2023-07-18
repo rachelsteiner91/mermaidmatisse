@@ -43,14 +43,14 @@ function Nav() {
           <NavLink className="button" to="/collections">
             Collection
           </NavLink>
+          <NavLink className="button" to="/about">
+            About Us
+          </NavLink>
           <NavLink className="button" to="/signup">
             Sign Up
           </NavLink>
           <NavLink className="button" to="/login">
             Log In
-          </NavLink>
-          <NavLink className="button" to="/about">
-            About Us
           </NavLink>
         </div>
       </header>
