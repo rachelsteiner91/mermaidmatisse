@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import {useState} from "react";
 
 function ArtistCard({ artist }) {
     const { name, medium, id, image, description } = artist;
+    const [showDescription, setShowDescription] = useState(false);
+
+    const toggleDescription = () => {
+      setShowDescription((prevState) => !prevState);
+    }
 
   return (
     <div className="card" id={id} >
@@ -10,17 +16,19 @@ function ArtistCard({ artist }) {
        
     </figure>
     <section className="details" >
-        <Link to={`/artists/${id}`}>
         <img
             src={image}
             alt={description}
-            style={{ maxWidth: "400px", maxHeight: "400px" }}
+            style={{ maxWidth: "400px", maxHeight: "400px", cursor: "pointer" }}
+            onClick={toggleDescription}
           />
-          </Link>
+          <Link to={`/artists/${id}`}>
             <h2>{name}</h2>
+            </Link>
         
         <p>{medium}</p>
-        <p>{description}</p>
+        {showDescription && <p>{description}</p>}
+        {/* <p>{description}</p> */}
     </section>
 </div>
   )
