@@ -1,0 +1,198 @@
+/* h1 {
+    font-weight: bold; 
+} */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.app {
+color: #000;
+text-align: center;
+font-size: 14px;
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+
+} 
+/* .extra-bold {
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+  } */
+/* .menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  } */
+  a:link{
+    color:black;
+  }
+  a:visited{
+    color:black;
+  }
+.menu {
+    background: #EEE9E9;
+    /* background-image: url("https://cdn.discordapp.com/attachments/1113536081091108996/1130590176347963553/Screenshot_2023-07-17_at_4.01.27_PM.png"); */
+    width: 739px;
+    height: 30px;
+    color: #000;
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+/* .search {
+  background: #F9F4F4;
+} */
+/* .about {
+  background: url("https://cdn.discordapp.com/attachments/1113536081091108996/1130927772915736626/30e714f7-c05b-4c9d-b126-0b752500d9a4.png")
+} */
+.menu a:hover {
+    background-color:darkseagreen;
+    
+}
+/* .carousel .carousel-item {
+  opacity: 1;
+  transition: opacity 10s ease-in-out;
+} 
+
+.carousel .carousel-item.carousel-item-active {
+  opacity: 1;
+  
+} */
+
+
+/* .image-grid a:hover {
+  background-color:darkseagreen;
+  
+} */
+/* .details a:hover {
+    background-color:darkseagreen;
+} */
+/* background-color: #F9F4F4; */
+.carousel-inner {
+    background-color: #F9F4F4;
+   
+    
+}
+
+.card {
+  background-color: #ffffff;
+  /* display:flexbox; */
+ 
+  /* display: flex; */
+}
+
+/* .card-details {
+  display:flex
+} */
+/* .navbar {
+    background: #EEE9E9;
+    width: 739px;
+    height: 30px;
+    width: 100%;
+} */
+
+.artcard {
+    width: 143px;
+    height: 119px;
+    border: 1px solid #000;
+    background: rgba(31, 63, 11, 0.64);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .grid-image {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+
+/* search bar {
+    display: flex;
+    width: 147px;
+    flex-direction: column;
+} */
+
+
+/* search bar stlyes */
+/* .search-container {
+    position: relative;
+    display: inline-block;
+    background-image: url("https://cdn.discordapp.com/attachments/1113536081091108996/1128133155266777198/IMG_9663.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: transparent;
+    color: #fff; 
+  }
+  
+  .search-container input[type="text"]::placeholder {
+    color: #fff; 
+  }
+  
+  .search-container button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .search-container button:hover {
+    opacity: 0.8;
+  } */
+
+  .modal-image-container {
+    position: relative;
+  }
+  
+  .zoom-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5rem;
+  }
+  
+  .zoom-button {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    background-color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+   
+  ul li a {
+    color: #000; 
+    /* text-decoration: none;  */
+  }
+  
+  ul li a:hover {
+    color: darkseagreen; 
+  }
+  

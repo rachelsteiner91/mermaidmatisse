@@ -42,11 +42,13 @@ https://dbdiagram.io/d/64a3166702bd1c4a5e6e71dc
 | /artists            | GET    | view all artists in database |          |
 | /artists/int:id     | GET    | view specific artist         |          |
 | /artworks           | GET    | view all artworks            |          |
-| /artworks/int:id    | GET    | view artwork details         |          |
+| /artworks/int:id    | GET    | view one artwork             |          |
 | /artworks/int:id    | DELETE | remove artwork from view     |          |
 | /collections        | POST   | create a new collection      |          |
 | /collections/int:id | PATCH  | add or update collection     |          |
 | /collection/int:id  | GET    | view user collection         |          |
+| /styles/int:id      | GET    | view one style               |          |
+| /styles             | GET    | view all styles              |          |
 
 ## Wireframe
 https://www.figma.com/file/oI7mVHO4AIwjU5yEBXPglR/Mermaid-Matisse---Capstone?type=design&node-id=0%3A1&mode=design&t=q7z1q2s3K8roI7l0-1
