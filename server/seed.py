@@ -88,7 +88,6 @@ if __name__ == '__main__':
             Artwork(title="You can lay your hands on me", artist_id=3, medium="oil and gloss", style_id=2, image="https://cdn.discordapp.com/attachments/1113536081091108996/1127257306090967100/1650073849-you-can-lay-your-hands-on-me-miranda-forrester.webp"),
             Artwork(title="egocentric with company", artist_id=4, medium="painting", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128462714000380024/IMG_EE27915EE79C-1.jpeg"),
             Artwork(title="The Falling Sky", artist_id=5, medium="colored pencil on wood", style_id=7, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128464073353330829/IMG_4FB6282B24CB-1.jpeg"),
-            Artwork(title="To Make Room For The Garden You Must First Burn The House", artist_id=21, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1130916317369749698/IMG_9328F2C8BD23-1.jpeg"),
             Artwork(title="Get away with it", artist_id=6, medium="oil on canvas", style_id=4, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128465552273317898/IMG_DD18A2944891-1.jpeg"),
             Artwork(title="The secret garden", artist_id=7, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128467538917982288/IMG_14F16BF868F2-1.jpeg"),
             Artwork(title="detail", artist_id=7, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1128468405373128734/IMG_41CE698A46C5-1.jpeg"),
@@ -111,6 +110,7 @@ if __name__ == '__main__':
             Artwork(title="Hour of light", artist_id=19, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1129876930401947810/image.png"),
             Artwork(title="Magic Fire", artist_id=20, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1130912898626109480/1599090_MagicFire.jpg"),
             Artwork(title="As Above, So Below - As For Love? No One Knows", artist_id=21, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1130915708390359040/IMG_F2BEC11B030E-1.jpeg"),
+             Artwork(title="To Make Room For The Garden You Must First Burn The House", artist_id=21, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1130916317369749698/IMG_9328F2C8BD23-1.jpeg"),
             Artwork(title="Jazz Players", artist_id=22, medium="oil on canvas", style_id=1, image="https://cdn.discordapp.com/attachments/1113536081091108996/1130936590848491530/IMG_9768.jpg")
            
         ]

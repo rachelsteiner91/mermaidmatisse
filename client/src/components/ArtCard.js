@@ -42,7 +42,6 @@ function ArtCard({ artwork, addToCollection }) {
         </Link>
       </figure>
       <section className="details" style={{ width: '100%', height: 'auto' }}>
-      
         <h2 style={{fontSize: '14px', fontWeight: 'bold'}}>{artists.name}</h2> 
         <p style={{fontSize: '14px'}}> {title}</p> 
         <p  style={{fontSize: '12px', fontStyle: 'italic'}}> {medium}, {style.style_type} </p>
