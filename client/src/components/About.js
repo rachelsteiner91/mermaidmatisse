@@ -2,12 +2,17 @@ import React from "react";
 
 
 function About(){
-
+    
 
 //insert a video demo showing the user how to use the website!! 
 return (
     <div className="about">
-    <p>Tap into the art world with a simple, and powerful web and mobile-centric tool that helps you easily swipe to discover and virtually 'collect' art. This platform is for people who are open to learning about lesser known artists and want to trust their own decisions based off of what they like, and their tastes. Users will be shown an assortment of images, mainly paintings, prints and other mediums of art -- based on their selections, this will bring them to the next phase in the funnel which will resemble that of a feed displaying various works by emerging artists. The user, which we call “curator” has the ability to create their own tailored art collection and feed of favorites, through the familiar action of a ‘like’ or 'collect art'. The goal is to guide you (the curator) to discover art in a fun, engaging and accessible way.</p>
+        <img src="https://cdn.discordapp.com/attachments/1113536081091108996/1130927772915736626/30e714f7-c05b-4c9d-b126-0b752500d9a4.png" alt="Artwork" style={{ maxWidth: "300px", maxHeight: "300px"}} /> <img src="https://cdn.discordapp.com/attachments/1113536081091108996/1130927791467139072/6ab3c257-53e8-4981-a951-912ba184b5df.png" alt="Artwork" style={{ maxWidth: "300px", maxHeight: "300px"}} />
+    <p>
+     
+Step into the captivating world of art with a user-friendly, dynamic web and mobile-centric tool designed to facilitate the exploration and virtual curation of art. This innovative platform is perfect for art enthusiasts and newcomers who relish the excitement of discovering artworks. Users will be presented with an enticing array of images, including paintings, prints, and various other captivating art forms. By swiping through the collection and selecting their favorites, users will embark on a journey of artistic discovery. The subsequent phase of the experience will resemble a delightful feed, showcasing a selection of works crafted by emerging and well-known artists. We affectionately refer to our users as "curators" as they possess the power to craft their own bespoke art collections and favorites feed. With a simple tap of the 'like' or 'collect art' button, each curator can curate their artistic universe upon logging in. Our ultimate objective is to empower you, the curator, in your quest to embrace art in a thrilling, accessible, and engaging manner - providing a platform that celebrates artists and encourages trust in individual preferences. Join us today and embark on a delightful journey of artistic exploration and discovery. 
+    </p>
+    <p>Sources</p>
     </div>
 );
 }
