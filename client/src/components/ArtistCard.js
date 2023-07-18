@@ -27,7 +27,7 @@ function ArtistCard({ artist }) {
             </Link>
         
         <p>{medium}</p>
-        {showDescription && <p>{description}</p>}
+        {showDescription && <p style={{textAlign: 'justify'}}>{description}</p>}
         {/* <p>{description}</p> */}
     </section>
 </div>

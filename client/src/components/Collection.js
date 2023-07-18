@@ -17,11 +17,12 @@ function Collection({ collection }) {
       </Link> */}
       {collection.map((artwork, index) => (
         <div key={index}>
-          <h2>{artwork.title}</h2>
+          <h3>{artwork.title}</h3>
+          <p>{artwork.artists.name}</p>
           <img
             src={artwork.image}
             alt={artwork.title}
-            style={{ maxWidth: "400px", maxHeight: "400px" }}
+            style={{ maxWidth: "500px", maxHeight: "500px" }}
           />
         </div>
       ))}

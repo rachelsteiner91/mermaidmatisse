@@ -35,9 +35,10 @@ function ArtistDetail() {
       <div className="style-card">
         <figure className="image" >
           <img src={image} alt={description}  style={{ maxWidth: "600px", maxHeight: "600px" }}/>
-          <section>
+          <section style={{ width: '100%', height: 'auto', fontSize: '12px', textAlign: 'justify' }}>
             <p> {description}</p>
             <p>  {medium}</p>
+          
 
           </section>
         </figure>
