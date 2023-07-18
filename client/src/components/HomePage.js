@@ -6,9 +6,9 @@ function HomePage({artworks}){
    
     return(
         <div>
-          <Link to="/artworks">
+          {/* <Link to="/artworks">
             <h3>Discover Art</h3>
-            </Link> 
+            </Link>  */}
             <h3>New Arrivals</h3>
             
 
@@ -30,16 +30,18 @@ function HomePage({artworks}){
          
           </Carousel>
         </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        {/* <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
-        </button>
+        </button> */}
       </div>
-     
+      <Link to="/artworks">
+            <h2>Discover Art</h2>
+            </Link>  
 <div className="image-grid" style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
         {artworks.map((artwork, index) => (
           <img key={index} src={artwork.image} alt={`Artwork ${index + 1}`} className="grid-image" style={{ width: '100%', height: 'auto' }} />

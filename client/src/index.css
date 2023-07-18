@@ -187,4 +187,12 @@ line-height: normal;
     cursor: pointer;
   }
    
+  ul li a {
+    color: #000; 
+    /* text-decoration: none;  */
+  }
+  
+  ul li a:hover {
+    color: darkseagreen; 
+  }
   

@@ -92,9 +92,9 @@ function App() {
       {/* Mermaid Matisse */}
       {/* style={{fontWeight: 'extra-bold', position: 'fixed', top: '0', left: '0', width: '100%', backgroundColor: '#fff'}} */}
       <Router>
-      <h1 className="extra-bold" style={{fontWeight: 'extra-bold'}}>
+      {/* <h1 className="extra-bold" style={{fontWeight: 'extra-bold'}}>
           Mermaid Matisse
-      </h1>
+      </h1> */}
       <Nav />
       <Search onSearchChange={onSearchChange} search={search}/>
       <Routes>

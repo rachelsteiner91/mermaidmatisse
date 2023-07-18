@@ -22,10 +22,11 @@ function Nav() {
           Mermaid Matisse
           <span className="logo" role="img"></span>
         </h1> */}
+         <Link to={"/"} style={{ textDecoration: 'none' }}>
         <h1>
-          <Link to={"/"}></Link>
+          Mermaid Matisse
         </h1>
-       
+        </Link>
         <div className="menu" >
           <NavLink className="button" to="/">
             Home
