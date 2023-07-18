@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function ArtistDetail() {
   const [artist, setArtist] = useState({});
@@ -26,11 +27,14 @@ function ArtistDetail() {
 
   return (
     <div className="style-detail" id={id}>
+      <Link to="/artists">
+        <h3>Back to Artists</h3>
+        </Link>
       <h1>{name}</h1>
 
       <div className="style-card">
-        <figure className="image">
-          <img src={image} alt={description} />
+        <figure className="image" >
+          <img src={image} alt={description}  style={{ maxWidth: "600px", maxHeight: "600px" }}/>
           <section>
             <p> {description}</p>
             <p>  {medium}</p>

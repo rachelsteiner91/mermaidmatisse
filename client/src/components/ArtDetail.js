@@ -73,6 +73,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Modal from "react-modal";
+import { Link } from "react-router-dom";
 
 function ArtDetail() {
   const [artwork, setArtwork] = useState({
@@ -122,6 +123,9 @@ function ArtDetail() {
 
   return (
     <div className="art-detail" id={id}>
+      <Link to="/artworks">
+        <h3>Back to Art</h3>
+        </Link>
       <h2>{title}</h2>
       <p>{artists.name}</p>
       <p style={{fontSize: '10px', fontStyle: 'italic'}}>*click on artwork image to zoom in* </p>
@@ -131,7 +135,7 @@ function ArtDetail() {
           <img
             src={image}
             alt={title}
-            style={{ maxWidth: "400px", maxHeight: "400px", cursor: "zoom-in" }}
+            style={{ maxWidth: "600px", maxHeight: "600px", cursor: "zoom-in" }}
             onClick={handleImageClick} 
           />
           <section>
