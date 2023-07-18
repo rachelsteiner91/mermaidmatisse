@@ -8,7 +8,7 @@ function StyleDetail() {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5555/styles/${params.id}`)
+    fetch(`/styles/${params.id}`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -56,7 +56,7 @@ export default StyleDetail;
 //   const params = useParams();
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5555/styles/${params.id}`)
+//     fetch(`/styles/${params.id}`)
 //       .then((res) => {
 //         if (res.ok) {
 //           return res.json();

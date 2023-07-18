@@ -14,7 +14,7 @@
 //   const params = useParams();
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5555/artworks/${params.id}`)
+//     fetch(`/artworks/${params.id}`)
 //       .then((res) => {
 //         if (res.ok) {
 //           return res.json();
@@ -87,7 +87,7 @@ function ArtDetail() {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5555/artworks/${params.id}`)
+    fetch(`/artworks/${params.id}`)
       .then((res) => {
         if (res.ok) {
           return res.json();

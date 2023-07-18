@@ -20,7 +20,7 @@ function Login(){
       });
 
       const handleSubmit = (values) => {
-        fetch("http://localhost:5555/login", {
+        fetch("/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -47,6 +47,7 @@ function Login(){
             setErrorMessage(error.message);
           });
       };
+
       return (
         <>
         <Formik

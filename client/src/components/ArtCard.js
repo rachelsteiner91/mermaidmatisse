@@ -10,7 +10,7 @@ function ArtCard({ artwork, addToCollection }) {
   console.log(user)
 
   const handleAddToCollection = () => {
-    fetch("http://localhost:5555/collections", {
+    fetch("/collections", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

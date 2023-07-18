@@ -24,7 +24,7 @@ function Signup() {
     };
 
     try {
-      const response = await fetch('http://localhost:5555/signup', {
+      const response = await fetch('/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ function Signup() {
       });
 
       if (response.ok) {
-        const loginResponse = await fetch('http://localhost:5555/login', {
+        const loginResponse = await fetch('/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

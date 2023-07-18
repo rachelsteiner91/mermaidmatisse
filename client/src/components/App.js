@@ -24,58 +24,25 @@ function App() {
   const [artists, setArtists] = useState([])
   const [collection, setCollection] = useState([]);
   const [search, setSearch] = useState('')
+  console.log(user)
 
-  // console.log(user)
   useEffect(() => {
-    fetchUser()
-   
-  },[])
-
-
-  const fetchUser = () => {
-    // 8.✅ Create a GET fetch that goes to '/authorized'
-    fetch('http://localhost:5555/check_session')
-      // If returned successfully set the user to state and fetch our productions
-      .then(res => {
-        if(res.ok){       
-          res.json().then(user => {
-            console.log("-----authorized user from server session -------")
-            console.log(user)
-            setUser(user)
-           
-          })
-        }else{
-          setUser(null)// else set the user in state to Null
+    if (user == null) {
+      fetch('/check_session')
+      .then(response => {
+        if (response.ok) {
+          response.json().then(user => {setUser(user)})
         }
       })
-  }
-  // useEffect(() => {
-  //   if (user === null) {
-  //     fetch('http://localhost:5555/check_session')
-  //       .then(response => {
-  //         if (response.ok) {
-  //           response.json().then(user => {
-  //             console.log(user)
-  //             setUser(user);
-  //           });
-  //         } else {
-  //           setUser(null)
-  //         }
-  //       })
-  //       .catch(error => {
-  //         console.log(error)
-  //       });
-  //   }
-  // }, [user]);
-  
-
+    }
+  },[user])
  
   useEffect(() => {
       getArtworks();
   },[]);
   
   function getArtworks(){
-      fetch ('http://localhost:5555/artworks')
+      fetch ('/artworks')
           .then(response => response.json())
           .then(data => setArtworks(data))
   
@@ -85,7 +52,7 @@ function App() {
     },[]);
     
     function getStyles(){
-        fetch ('http://localhost:5555/styles')
+        fetch ('/styles')
             .then(response => response.json())
             .then(data => setStyles(data))
     
@@ -95,7 +62,7 @@ function App() {
       },[]);
       
       function getArtists(){
-          fetch ('http://localhost:5555/artists')
+          fetch ('/artists')
               .then(response => response.json())
               .then(data => setArtists(data))
       
