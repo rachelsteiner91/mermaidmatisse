@@ -30,6 +30,9 @@ function ArtistDetail() {
       <Link to="/artists">
         <h3>Back to Artists</h3>
         </Link>
+        <Link to="/artworks">
+        <h3>Back to Artworks</h3>
+        </Link>
       <h1>{name}</h1>
       <div className="centered-container">
       <div className="style-card">
