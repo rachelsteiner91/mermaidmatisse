@@ -28,7 +28,8 @@ function ArtDetail() {
       .catch((error) => setError(error.message));
   }, [params.id]);
 
-  const { id, title, image, artists, medium, style } = artwork;
+  const { id, title, image, artists, artist_id, medium, style } = artwork;
+  console.log(artwork)
 
   if (error) return <h2>{error}</h2>;
 
@@ -55,7 +56,11 @@ function ArtDetail() {
         <h3>Back to Art</h3>
         </Link>
       <h2>{title}</h2>
+      <Link to={`/artists/${artist_id}`}>
       <p>{artists.name}</p>
+      </Link>
+     
+      
       <p style={{fontSize: '12px', fontStyle: 'italic'}}>*click on artwork image to zoom in* </p>
 
       <div className="project-card">

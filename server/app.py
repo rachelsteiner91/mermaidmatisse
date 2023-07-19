@@ -54,7 +54,7 @@ class OneArtwork(Resource):
 
         res = make_response(
             artwork.to_dict(only=('id', 'title', 'medium',
-                            'image', 'artists.name', 'style.style_type')),
+                            'image', 'artists.name', 'artist_id', 'style.style_type')),
             200
         )
         return res

@@ -22,7 +22,7 @@ function Nav() {
           Mermaid Matisse
           <span className="logo" role="img"></span>
         </h1> */}
-         <Link to={"/"} style={{ textDecoration: 'none' }}>
+         <Link to={"/"} style={{marginBottom: '60px', textDecoration: 'none' }}>
         <h1>
           Mermaid Matisse
         </h1>
