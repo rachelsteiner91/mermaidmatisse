@@ -61,7 +61,7 @@ function Signup() {
     return <Link to="/collections">Go to Collections</Link>;
   }
   return (
-    <form className="pure-form pure-form-stacked" onSubmit={handleSignup}>
+    <form className="pure-form pure-form-stacked" onSubmit={handleSignup} style={{fontSize: "16px"}}>
       <fieldset>
         <legend>Sign Up</legend>
         <label htmlFor="stacked-email">Username</label>

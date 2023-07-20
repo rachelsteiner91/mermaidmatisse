@@ -9,7 +9,7 @@ function HomePage({artworks}){
           {/* <Link to="/artworks">
             <h3>Discover Art</h3>
             </Link>  */}
-            <h3>New Arrivals</h3>
+            <h3 style={{fontSize: "24px"}}>New Arrivals</h3>
             
 {/* //window.locationreload  */}
       {/* transition time and all ease for images */}
