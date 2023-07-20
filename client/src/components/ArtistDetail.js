@@ -30,12 +30,15 @@ function ArtistDetail() {
       <Link to="/artists">
         <h3>Back to Artists</h3>
         </Link>
+        <Link to="/artworks">
+        <h3>Back to Artworks</h3>
+        </Link>
       <h1>{name}</h1>
-
+      <div className="centered-container">
       <div className="style-card">
         <figure className="image" >
           <img src={image} alt={description}  style={{ maxWidth: "600px", maxHeight: "600px" }}/>
-          <section style={{ width: '100%', height: 'auto', fontSize: '12px', textAlign: 'justify' }}>
+          <section style={{ maxWidth: "600px", maxHeight: "600px",textAlign: "justify"  }}>
             <p> {description}</p>
             <p>  {medium}</p>
           
@@ -44,6 +47,7 @@ function ArtistDetail() {
         </figure>
         <section className="details">{/* Additional details here */}</section>
       </div>
+    </div>
     </div>
   );
 }

@@ -55,7 +55,7 @@ function Login(){
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
-            <Form className="login-form">
+            <Form className="login-form" style={{fontSize: "16px"}}>
               <h3>Login</h3>
               {errorMessage && (
               <div className="error-message">{errorMessage}</div>

@@ -4,6 +4,8 @@ Users will be shown an assortment of images, mainly paintings, prints and other 
 The user, which we call “curator” has the ability to create their own tailored art collection and feed of favorites, through the familiar action of a ‘like’ or 'collect art'. 
 The goal is to guide you (the curator) to discover art in a fun, engaging and accessible way.
 
+https://cdn.discordapp.com/attachments/1113536081091108996/1131308348092981258/Screenshot_2023-07-18_at_7.16.21_PM.png
+
 ## User Stories 
 - Users can view all artworks
 - Users can search and view by color, medium, subject matter(minimalist, abstract, contemporary, human, landscape), staff picks

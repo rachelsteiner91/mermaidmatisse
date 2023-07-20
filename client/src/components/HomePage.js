@@ -9,13 +9,13 @@ function HomePage({artworks}){
           {/* <Link to="/artworks">
             <h3>Discover Art</h3>
             </Link>  */}
-            <h3>New Arrivals</h3>
+            <h3 style={{fontSize: "24px"}}>New Arrivals</h3>
             
-
-      
+{/* //window.locationreload  */}
+      {/* transition time and all ease for images */}
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          <Carousel autoPlay={true} infiniteLoop={true} interval={5000}>
+        <div className="carousel-inner" >
+          <Carousel autoPlay={true} infiniteLoop={true} interval={3000}>
           {artworks.map((artwork, index) => (
              <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
              <img src={artwork.image} className="carousel-image" alt={`Artwork ${index + 1}`} style={{ maxWidth: '500px', maxHeight: '500px' }} />
