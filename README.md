@@ -4,7 +4,9 @@ Users will be shown an assortment of images, mainly paintings, prints and other 
 The user, which we call “curator” has the ability to create their own tailored art collection and feed of favorites, through the familiar action of a ‘like’ or 'collect art'. 
 The goal is to guide you (the curator) to discover art in a fun, engaging and accessible way.
 
-https://cdn.discordapp.com/attachments/1113536081091108996/1131308348092981258/Screenshot_2023-07-18_at_7.16.21_PM.png
+![Screenshot 2023-07-20 at 1 38 27 PM](https://github.com/rachelsteiner91/mermaidmatisse/assets/127536637/252dfd82-c2a1-4a9b-a51a-901bac576fe0)
+
+<img width="1356" alt="Screenshot 2023-07-18 at 7 16 21 PM" src="https://github.com/rachelsteiner91/mermaidmatisse/assets/127536637/6f203ca3-f509-4db7-ab13-fbd10afc283f">
 
 ## User Stories 
 - Users can view all artworks
